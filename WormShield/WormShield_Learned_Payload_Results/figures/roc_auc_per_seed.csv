@@ -1,0 +1,31 @@
+Dataset,Variant,Seed,ROC-AUC
+AgentArena,Semantic only,7,0.9506076388888889
+AgentArena,Semantic only,19,0.9470146520146521
+AgentArena,Semantic only,31,0.9552370730475409
+AgentArena,Semantic only,43,0.9518855161112063
+AgentArena,Semantic only,59,0.9565663474692202
+AgentArena,Learned payload only,7,0.7763129340277778
+AgentArena,Learned payload only,19,0.8240476190476191
+AgentArena,Learned payload only,31,0.8514636866805564
+AgentArena,Learned payload only,43,0.7681644086205912
+AgentArena,Learned payload only,59,0.7652830027359782
+AgentArena,WormShield,7,0.9620876736111112
+AgentArena,WormShield,19,0.9639010989010989
+AgentArena,WormShield,31,0.9713786644779763
+AgentArena,WormShield,43,0.9613178604775242
+AgentArena,WormShield,59,0.9681301299589604
+AI-Worm,Semantic only,7,0.9991840331778123
+AI-Worm,Semantic only,19,0.9988880248833591
+AI-Worm,Semantic only,31,0.9986438569206842
+AI-Worm,Semantic only,43,0.999025920165889
+AI-Worm,Semantic only,59,0.9987739761534473
+AI-Worm,Learned payload only,7,0.8542695697252461
+AI-Worm,Learned payload only,19,0.8631150855365475
+AI-Worm,Learned payload only,31,0.8620803525142562
+AI-Worm,Learned payload only,43,0.8517719025401762
+AI-Worm,Learned payload only,59,0.8605684292379471
+AI-Worm,WormShield,7,0.9990751684810784
+AI-Worm,WormShield,19,0.9993193364437533
+AI-Worm,WormShield,31,0.9983634007257647
+AI-Worm,WormShield,43,0.9985469155002592
+AI-Worm,WormShield,59,0.9982125453602904

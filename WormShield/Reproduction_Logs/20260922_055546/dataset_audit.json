@@ -1,0 +1,29 @@
+{
+  "dataset": "D:\\WormShield final\\wormshield-observable-main.csv",
+  "rows": 1623,
+  "unique_runs": 621,
+  "label_multiclass_counts": {
+    "clean": 819,
+    "propagating": 473,
+    "exposed": 331
+  },
+  "label_binary_counts": {
+    "0": 1150,
+    "1": 473
+  },
+  "expected": {
+    "rows": 1623,
+    "unique_runs": 621,
+    "label_multiclass_counts": {
+      "clean": 819,
+      "exposed": 331,
+      "propagating": 473
+    },
+    "label_binary_counts": {
+      "0": 1150,
+      "1": 473
+    }
+  },
+  "matches_current_paper": true,
+  "problems": []
+}

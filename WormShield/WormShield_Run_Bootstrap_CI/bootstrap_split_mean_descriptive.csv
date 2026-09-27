@@ -1,0 +1,8 @@
+Metric,Five-Split Point Mean,Descriptive Bootstrap Low,Descriptive Bootstrap High,Valid Bootstrap Replicates,Caveat
+accuracy,0.917324932598137,0.9034549138949558,0.9305604531693307,5000,Descriptive only: the five random test splits overlap in underlying runs and are not independent samples.
+precision,0.8851789807862757,0.8605180338325253,0.9075377112189017,5000,Descriptive only: the five random test splits overlap in underlying runs and are not independent samples.
+recall,0.8312615727141921,0.7967446354903679,0.8663109667818109,5000,Descriptive only: the five random test splits overlap in underlying runs and are not independent samples.
+f1,0.8550932528509506,0.8314573288718875,0.8766330758251166,5000,Descriptive only: the five random test splits overlap in underlying runs and are not independent samples.
+roc_auc,0.9653630854853341,0.9555853395901636,0.9751725637308218,5000,Descriptive only: the five random test splits overlap in underlying runs and are not independent samples.
+pr_auc,0.928304566290786,0.912400671975999,0.9451701617135048,5000,Descriptive only: the five random test splits overlap in underlying runs and are not independent samples.
+fpr,0.04671330323931381,0.0369161290598314,0.05773290078694279,5000,Descriptive only: the five random test splits overlap in underlying runs and are not independent samples.

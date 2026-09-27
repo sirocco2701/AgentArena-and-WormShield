@@ -1,0 +1,111 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\wormshield_transformation_robustness_agentarena.py
+
+
+========================================================================================================
+WormShield Propagation-Style Robustness on AgentArena
+========================================================================================================
+
+Compared detectors:
+  Original WormShield XGBoost
+  Matched-split DonkeyRail Logistic Regression
+
+Style annotation:
+  deterministic operational categories from raw AgentArena text structure only
+  no BLEU/ROUGE/METEOR and no WormShield features used to define the categories
+
+Raw AgentArena CSV:
+D:\WormShield final\wormshield-observable-main.csv
+
+Schema audit: no explicit trusted propagation-style/transformation-type column is present.
+
+Operational propagation-style counts (all positive AgentArena events):
+Propagation Style
+Direct / near-verbatim        236
+Paraphrased / reformulated    127
+Summarized                     63
+Structured partial             47
+
+IMPORTANT: these are deterministic operational categories derived from raw text structure, not explicit human labels.
+
+WormShield feature cache:
+D:\WormShield final\WormShield_Learned_Payload_Results\feature_cache\agentarena_learned_payload__protectai_deberta-v3-base-prompt-injection-v2.pkl
+
+============================================================================================
+Seed 7
+============================================================================================
+WormShield validation threshold: 0.461490
+Direct / near-verbatim       N= 75  WormShield recall=0.907  DonkeyRail recall=1.000
+Paraphrased / reformulated   N= 35  WormShield recall=0.743  DonkeyRail recall=0.457
+Summarized                   N= 13  WormShield recall=0.923  DonkeyRail recall=0.462
+Structured partial           N= 21  WormShield recall=0.810  DonkeyRail recall=0.381
+
+============================================================================================
+Seed 19
+============================================================================================
+WormShield validation threshold: 0.349214
+Direct / near-verbatim       N= 74  WormShield recall=0.946  DonkeyRail recall=1.000
+Paraphrased / reformulated   N= 38  WormShield recall=0.842  DonkeyRail recall=0.342
+Summarized                   N= 22  WormShield recall=0.955  DonkeyRail recall=0.045
+Structured partial           N= 16  WormShield recall=0.562  DonkeyRail recall=0.312
+
+============================================================================================
+Seed 31
+============================================================================================
+WormShield validation threshold: 0.763654
+Direct / near-verbatim       N= 70  WormShield recall=0.800  DonkeyRail recall=1.000
+Paraphrased / reformulated   N= 38  WormShield recall=0.737  DonkeyRail recall=0.553
+Summarized                   N= 22  WormShield recall=0.818  DonkeyRail recall=0.409
+Structured partial           N= 11  WormShield recall=0.364  DonkeyRail recall=0.455
+
+============================================================================================
+Seed 43
+============================================================================================
+WormShield validation threshold: 0.496146
+Direct / near-verbatim       N= 67  WormShield recall=0.866  DonkeyRail recall=1.000
+Paraphrased / reformulated   N= 50  WormShield recall=0.780  DonkeyRail recall=0.660
+Summarized                   N= 17  WormShield recall=0.824  DonkeyRail recall=0.588
+Structured partial           N= 13  WormShield recall=0.538  DonkeyRail recall=0.462
+
+============================================================================================
+Seed 59
+============================================================================================
+WormShield validation threshold: 0.553096
+Direct / near-verbatim       N= 57  WormShield recall=0.947  DonkeyRail recall=1.000
+Paraphrased / reformulated   N= 41  WormShield recall=0.805  DonkeyRail recall=0.683
+Summarized                   N= 23  WormShield recall=0.957  DonkeyRail recall=0.652
+Structured partial           N= 15  WormShield recall=0.600  DonkeyRail recall=0.533
+
+========================================================================================================================
+PROPAGATION-STYLE ROBUSTNESS SUMMARY
+========================================================================================================================
+
+Direct / near-verbatim
+  DonkeyRail (LR)  Recall=1.0000 +/- 0.0000   Mean test N=68.6
+  WormShield       Recall=0.8931 +/- 0.0554   Mean test N=68.6
+
+Paraphrased / reformulated
+  DonkeyRail (LR)  Recall=0.5390 +/- 0.1273   Mean test N=40.4
+  WormShield       Recall=0.7813 +/- 0.0393   Mean test N=40.4
+
+Summarized
+  DonkeyRail (LR)  Recall=0.4313 +/- 0.2115   Mean test N=19.4
+  WormShield       Recall=0.8952 +/- 0.0619   Mean test N=19.4
+
+Structured partial
+  DonkeyRail (LR)  Recall=0.4286 +/- 0.0755   Mean test N=15.2
+  WormShield       Recall=0.5748 +/- 0.1427   Mean test N=15.2
+
+Saved dumbbell figure:
+D:\WormShield final\WormShield_Learned_Payload_Results\propagation_style_robustness_agentarena\propagation_style_recall_dumbbell.pdf
+D:\WormShield final\WormShield_Learned_Payload_Results\propagation_style_robustness_agentarena\propagation_style_recall_dumbbell.png
+
+Saved tables:
+D:\WormShield final\WormShield_Learned_Payload_Results\propagation_style_robustness_agentarena\propagation_style_per_seed.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\propagation_style_robustness_agentarena\propagation_style_summary.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\propagation_style_robustness_agentarena\heldout_positive_predictions.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\propagation_style_robustness_agentarena\propagation_style_audit.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\propagation_style_robustness_agentarena\propagation_style_counts.csv
+
+Scientific note:
+The uploaded AgentArena export has no explicit ground-truth propagation-style column. These categories are operationally inferred from raw text structure using frozen rules that do not use either detector's features. Review propagation_style_audit.csv before describing the groups as exact, paraphrased, summarized, or structured in the paper.

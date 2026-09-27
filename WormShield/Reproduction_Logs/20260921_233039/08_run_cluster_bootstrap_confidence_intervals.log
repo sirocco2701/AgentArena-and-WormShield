@@ -1,0 +1,123 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\wormshield_run_bootstrap_ci.py --bootstrap-reps 5000
+
+
+Using main WormShield script:
+D:\WormShield final\wormshield_learned_payload.py
+
+AgentArena CSV:
+D:\WormShield final\wormshield-observable-main.csv
+Transformer device: cpu
+
+Loading cached AgentArena learned-payload features...
+
+==============================================================================
+SEED 7
+==============================================================================
+Train: 951 events, 348 runs
+Val:   208 events, 87 runs
+Test:  464 events, 186 runs
+Validation-selected threshold: 0.4615
+Point F1: 0.8662
+Point ROC-AUC: 0.9621
+Point FPR: 0.0531
+    bootstrap seed 7: 1000/5000
+    bootstrap seed 7: 2000/5000
+    bootstrap seed 7: 3000/5000
+    bootstrap seed 7: 4000/5000
+    bootstrap seed 7: 5000/5000
+
+
+==============================================================================
+SEED 19
+==============================================================================
+Train: 868 events, 348 runs
+Val:   241 events, 87 runs
+Test:  514 events, 186 runs
+Validation-selected threshold: 0.3492
+Point F1: 0.8571
+Point ROC-AUC: 0.9639
+Point FPR: 0.0714
+    bootstrap seed 19: 1000/5000
+    bootstrap seed 19: 2000/5000
+    bootstrap seed 19: 3000/5000
+    bootstrap seed 19: 4000/5000
+    bootstrap seed 19: 5000/5000
+
+
+==============================================================================
+SEED 31
+==============================================================================
+Train: 911 events, 348 runs
+Val:   234 events, 87 runs
+Test:  478 events, 186 runs
+Validation-selected threshold: 0.7637
+Point F1: 0.8446
+Point ROC-AUC: 0.9714
+Point FPR: 0.0119
+    bootstrap seed 31: 1000/5000
+    bootstrap seed 31: 2000/5000
+    bootstrap seed 31: 3000/5000
+    bootstrap seed 31: 4000/5000
+    bootstrap seed 31: 5000/5000
+
+
+==============================================================================
+SEED 43
+==============================================================================
+Train: 907 events, 348 runs
+Val:   212 events, 87 runs
+Test:  504 events, 186 runs
+Validation-selected threshold: 0.4961
+Point F1: 0.8399
+Point ROC-AUC: 0.9613
+Point FPR: 0.0448
+    bootstrap seed 43: 1000/5000
+    bootstrap seed 43: 2000/5000
+    bootstrap seed 43: 3000/5000
+    bootstrap seed 43: 4000/5000
+    bootstrap seed 43: 5000/5000
+
+
+==============================================================================
+SEED 59
+==============================================================================
+Train: 884 events, 348 runs
+Val:   259 events, 87 runs
+Test:  480 events, 186 runs
+Validation-selected threshold: 0.5531
+Point F1: 0.8676
+Point ROC-AUC: 0.9681
+Point FPR: 0.0523
+    bootstrap seed 59: 1000/5000
+    bootstrap seed 59: 2000/5000
+    bootstrap seed 59: 3000/5000
+    bootstrap seed 59: 4000/5000
+    bootstrap seed 59: 5000/5000
+
+
+==============================================================================
+RUN-CLUSTERED BOOTSTRAP SUMMARY
+==============================================================================
+   Metric  Five-Split Mean  Five-Split SD  Mean CI Width  Median CI Width  Min CI Width  Max CI Width
+ accuracy         0.917325       0.005314       0.060608         0.062511      0.047610      0.071581
+precision         0.885179       0.047437       0.102641         0.109675      0.066857      0.114070
+   recall         0.831262       0.053285       0.151492         0.154138      0.108883      0.193023
+       f1         0.855093       0.012519       0.099076         0.093144      0.075515      0.127712
+  roc_auc         0.965363       0.004274       0.041901         0.046187      0.028800      0.051984
+   pr_auc         0.928305       0.012773       0.070942         0.068511      0.059237      0.092378
+      fpr         0.046713       0.021801       0.045158         0.047492      0.021483      0.059777
+
+Per-seed F1 95% CIs:
+  seed 7: 0.8662 [0.8172, 0.9103]
+  seed 19: 0.8571 [0.8171, 0.8927]
+  seed 31: 0.8446 [0.7758, 0.9035]
+  seed 43: 0.8399 [0.7788, 0.8945]
+  seed 59: 0.8676 [0.8235, 0.9068]
+
+Saved:
+D:\WormShield final\WormShield_Run_Bootstrap_CI\bootstrap_ci_per_seed.csv
+D:\WormShield final\WormShield_Run_Bootstrap_CI\bootstrap_ci_width_summary.csv
+D:\WormShield final\WormShield_Run_Bootstrap_CI\bootstrap_split_mean_descriptive.csv
+D:\WormShield final\WormShield_Run_Bootstrap_CI\main_test_predictions.csv
+D:\WormShield final\WormShield_Run_Bootstrap_CI\bootstrap_manifest.json

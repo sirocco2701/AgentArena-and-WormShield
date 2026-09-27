@@ -1,0 +1,360 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\donkeyrail_agentarena.py
+
+
+==========================================================================================
+DONKEYRAIL BASELINES ON WORMLNET USING MATCHED WORMFENCE RUN-LEVEL SPLITS
+==========================================================================================
+
+Dataset:
+D:\WormShield final\wormshield-observable-main.csv
+
+WormShield split directory:
+D:\WormShield final\WormShield_Learned_Payload_Results\splits
+
+Seeds:
+[7, 19, 31, 43, 59]
+[nltk_data] Downloading package wordnet to
+[nltk_data]     C:\Users\harir\AppData\Roaming\nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package omw-1.4 to
+[nltk_data]     C:\Users\harir\AppData\Roaming\nltk_data...
+[nltk_data]   Package omw-1.4 is already up-to-date!
+
+Dataset rows: 1623
+Unique runs: 621
+Binary labels:
+label_binary
+0    1150
+1     473
+Name: count, dtype: int64
+
+Building DonkeyRail BLEU / ROUGE-L / METEOR features...
+C:\Users\harir\AppData\Local\Programs\Python\Python311\Lib\site-packages\nltk\translate\bleu_score.py:577: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+C:\Users\harir\AppData\Local\Programs\Python\Python311\Lib\site-packages\nltk\translate\bleu_score.py:577: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+C:\Users\harir\AppData\Local\Programs\Python\Python311\Lib\site-packages\nltk\translate\bleu_score.py:577: UserWarning: 
+The hypothesis contains 0 counts of 2-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+Saved formatted features:
+D:\WormShield final\DonkeyRail_AgentArena_Matched_Splits_Results\formatted_features.csv
+
+==============================================================================
+Logistic Regression | seed 7
+==============================================================================
+  BLEU                         val F1=0.8065  val AUC=0.8891  threshold=0.238461
+  ROUGE-L                      val F1=0.7671  val AUC=0.9023  threshold=0.229621
+  METEOR                       val F1=0.7862  val AUC=0.9154  threshold=0.177167
+  BLEU & ROUGE-L               val F1=0.7752  val AUC=0.9051  threshold=0.303440
+  BLEU & METEOR                val F1=0.7832  val AUC=0.9158  threshold=0.194047
+  ROUGE-L & METEOR             val F1=0.7943  val AUC=0.9135  threshold=0.197684
+  BLEU & ROUGE-L & METEOR      val F1=0.7862  val AUC=0.9154  threshold=0.195477
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: BLEU
+  Validation threshold: 0.238461
+  Validation best F1: 0.8065
+
+HELD-OUT TEST:
+  Accuracy=0.8082  Precision=0.6774  Recall=0.7292  F1=0.7023  ROC-AUC=0.8243  FPR=0.1562
+
+==============================================================================
+Logistic Regression | seed 19
+==============================================================================
+  BLEU                         val F1=0.7075  val AUC=0.8449  threshold=0.213736
+  ROUGE-L                      val F1=0.6918  val AUC=0.8597  threshold=0.249983
+  METEOR                       val F1=0.7107  val AUC=0.8735  threshold=0.623042
+  BLEU & ROUGE-L               val F1=0.6918  val AUC=0.8599  threshold=0.247302
+  BLEU & METEOR                val F1=0.7107  val AUC=0.8731  threshold=0.607751
+  ROUGE-L & METEOR             val F1=0.6992  val AUC=0.8728  threshold=0.588398
+  BLEU & ROUGE-L & METEOR      val F1=0.7107  val AUC=0.8701  threshold=0.621186
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: METEOR
+  Validation threshold: 0.623042
+  Validation best F1: 0.7107
+
+HELD-OUT TEST:
+  Accuracy=0.8152  Precision=0.7099  Recall=0.6200  F1=0.6619  ROC-AUC=0.8673  FPR=0.1044
+
+==============================================================================
+Logistic Regression | seed 31
+==============================================================================
+  BLEU                         val F1=0.7007  val AUC=0.8487  threshold=0.284137
+  ROUGE-L                      val F1=0.7075  val AUC=0.8683  threshold=0.339482
+  METEOR                       val F1=0.6883  val AUC=0.8687  threshold=0.278146
+  BLEU & ROUGE-L               val F1=0.7075  val AUC=0.8690  threshold=0.326437
+  BLEU & METEOR                val F1=0.6883  val AUC=0.8689  threshold=0.279051
+  ROUGE-L & METEOR             val F1=0.6933  val AUC=0.8699  threshold=0.294672
+  BLEU & ROUGE-L & METEOR      val F1=0.6974  val AUC=0.8714  threshold=0.289666
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: BLEU & ROUGE-L
+  Validation threshold: 0.326437
+  Validation best F1: 0.7075
+
+HELD-OUT TEST:
+  Accuracy=0.8201  Precision=0.6774  Recall=0.7447  F1=0.7095  ROC-AUC=0.8651  FPR=0.1484
+
+==============================================================================
+Logistic Regression | seed 43
+==============================================================================
+  BLEU                         val F1=0.8056  val AUC=0.9178  threshold=0.178972
+  ROUGE-L                      val F1=0.7941  val AUC=0.9197  threshold=0.310531
+  METEOR                       val F1=0.7914  val AUC=0.9161  threshold=0.254690
+  BLEU & ROUGE-L               val F1=0.7941  val AUC=0.9192  threshold=0.313477
+  BLEU & METEOR                val F1=0.7832  val AUC=0.9107  threshold=0.233707
+  ROUGE-L & METEOR             val F1=0.7887  val AUC=0.9196  threshold=0.235885
+  BLEU & ROUGE-L & METEOR      val F1=0.7887  val AUC=0.9122  threshold=0.277958
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: BLEU
+  Validation threshold: 0.178972
+  Validation best F1: 0.8056
+
+HELD-OUT TEST:
+  Accuracy=0.8194  Precision=0.6591  Recall=0.7891  F1=0.7183  ROC-AUC=0.8400  FPR=0.1681
+
+==============================================================================
+Logistic Regression | seed 59
+==============================================================================
+  BLEU                         val F1=0.7134  val AUC=0.8256  threshold=0.248552
+  ROUGE-L                      val F1=0.6901  val AUC=0.8501  threshold=0.318031
+  METEOR                       val F1=0.7209  val AUC=0.8664  threshold=0.236279
+  BLEU & ROUGE-L               val F1=0.6951  val AUC=0.8517  threshold=0.328100
+  BLEU & METEOR                val F1=0.7209  val AUC=0.8684  threshold=0.241186
+  ROUGE-L & METEOR             val F1=0.7135  val AUC=0.8628  threshold=0.247617
+  BLEU & ROUGE-L & METEOR      val F1=0.7119  val AUC=0.8651  threshold=0.249744
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: BLEU & METEOR
+  Validation threshold: 0.241186
+  Validation best F1: 0.7209
+
+HELD-OUT TEST:
+  Accuracy=0.8042  Precision=0.6207  Recall=0.7941  F1=0.6968  ROC-AUC=0.8688  FPR=0.1919
+
+==============================================================================
+Naive Bayes | seed 7
+==============================================================================
+  BLEU                         val F1=0.8065  val AUC=0.8891  threshold=0.158966
+  ROUGE-L                      val F1=0.7671  val AUC=0.9023  threshold=0.185829
+  METEOR                       val F1=0.7862  val AUC=0.9154  threshold=0.118082
+  BLEU & ROUGE-L               val F1=0.7937  val AUC=0.9077  threshold=0.200826
+  BLEU & METEOR                val F1=0.7852  val AUC=0.9121  threshold=0.064184
+  ROUGE-L & METEOR             val F1=0.7832  val AUC=0.9101  threshold=0.077503
+  BLEU & ROUGE-L & METEOR      val F1=0.7917  val AUC=0.9097  threshold=0.024386
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: BLEU
+  Validation threshold: 0.158966
+  Validation best F1: 0.8065
+
+HELD-OUT TEST:
+  Accuracy=0.8082  Precision=0.6774  Recall=0.7292  F1=0.7023  ROC-AUC=0.8243  FPR=0.1562
+
+==============================================================================
+Naive Bayes | seed 19
+==============================================================================
+  BLEU                         val F1=0.7075  val AUC=0.8449  threshold=0.136213
+  ROUGE-L                      val F1=0.6918  val AUC=0.8596  threshold=0.197828
+  METEOR                       val F1=0.7107  val AUC=0.8735  threshold=0.770501
+  BLEU & ROUGE-L               val F1=0.6957  val AUC=0.8646  threshold=0.062775
+  BLEU & METEOR                val F1=0.7050  val AUC=0.8750  threshold=0.314002
+  ROUGE-L & METEOR             val F1=0.6993  val AUC=0.8705  threshold=0.423473
+  BLEU & ROUGE-L & METEOR      val F1=0.7015  val AUC=0.8703  threshold=0.711856
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: METEOR
+  Validation threshold: 0.770501
+  Validation best F1: 0.7107
+
+HELD-OUT TEST:
+  Accuracy=0.8152  Precision=0.7099  Recall=0.6200  F1=0.6619  ROC-AUC=0.8673  FPR=0.1044
+
+==============================================================================
+Naive Bayes | seed 31
+==============================================================================
+  BLEU                         val F1=0.7007  val AUC=0.8487  threshold=0.200709
+  ROUGE-L                      val F1=0.7075  val AUC=0.8683  threshold=0.326246
+  METEOR                       val F1=0.6883  val AUC=0.8687  threshold=0.233112
+  BLEU & ROUGE-L               val F1=0.6980  val AUC=0.8707  threshold=0.158801
+  BLEU & METEOR                val F1=0.6928  val AUC=0.8704  threshold=0.107648
+  ROUGE-L & METEOR             val F1=0.6980  val AUC=0.8708  threshold=0.267455
+  BLEU & ROUGE-L & METEOR      val F1=0.6974  val AUC=0.8716  threshold=0.065750
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: ROUGE-L
+  Validation threshold: 0.326246
+  Validation best F1: 0.7075
+
+HELD-OUT TEST:
+  Accuracy=0.8159  Precision=0.6710  Recall=0.7376  F1=0.7027  ROC-AUC=0.8636  FPR=0.1513
+
+==============================================================================
+Naive Bayes | seed 43
+==============================================================================
+  BLEU                         val F1=0.8056  val AUC=0.9178  threshold=0.122888
+  ROUGE-L                      val F1=0.7941  val AUC=0.9197  threshold=0.301268
+  METEOR                       val F1=0.7914  val AUC=0.9161  threshold=0.214755
+  BLEU & ROUGE-L               val F1=0.8058  val AUC=0.9260  threshold=0.137176
+  BLEU & METEOR                val F1=0.7971  val AUC=0.9253  threshold=0.102523
+  ROUGE-L & METEOR             val F1=0.8088  val AUC=0.9221  threshold=0.232107
+  BLEU & ROUGE-L & METEOR      val F1=0.8029  val AUC=0.9255  threshold=0.111595
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: ROUGE-L & METEOR
+  Validation threshold: 0.232107
+  Validation best F1: 0.8088
+
+HELD-OUT TEST:
+  Accuracy=0.8234  Precision=0.6883  Recall=0.7211  F1=0.7043  ROC-AUC=0.8658  FPR=0.1345
+
+==============================================================================
+Naive Bayes | seed 59
+==============================================================================
+  BLEU                         val F1=0.7134  val AUC=0.8256  threshold=0.161351
+  ROUGE-L                      val F1=0.6901  val AUC=0.8501  threshold=0.289733
+  METEOR                       val F1=0.7209  val AUC=0.8664  threshold=0.174275
+  BLEU & ROUGE-L               val F1=0.7037  val AUC=0.8520  threshold=0.159574
+  BLEU & METEOR                val F1=0.7135  val AUC=0.8628  threshold=0.067997
+  ROUGE-L & METEOR             val F1=0.7105  val AUC=0.8609  threshold=0.747148
+  BLEU & ROUGE-L & METEOR      val F1=0.7105  val AUC=0.8594  threshold=0.577458
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: METEOR
+  Validation threshold: 0.174275
+  Validation best F1: 0.7209
+
+HELD-OUT TEST:
+  Accuracy=0.8042  Precision=0.6207  Recall=0.7941  F1=0.6968  ROC-AUC=0.8688  FPR=0.1919
+
+==============================================================================
+Decision Stump | seed 7
+==============================================================================
+  BLEU                         val F1=0.7769  val AUC=0.8480  threshold=0.706081
+  ROUGE-L                      val F1=0.7481  val AUC=0.8381  threshold=0.661538
+  METEOR                       val F1=0.7581  val AUC=0.8379  threshold=0.687708
+  BLEU & ROUGE-L               val F1=0.7769  val AUC=0.8480  threshold=0.706081
+  BLEU & METEOR                val F1=0.7769  val AUC=0.8480  threshold=0.706081
+  ROUGE-L & METEOR             val F1=0.7581  val AUC=0.8379  threshold=0.687708
+  BLEU & ROUGE-L & METEOR      val F1=0.7769  val AUC=0.8480  threshold=0.706081
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: BLEU
+  Validation threshold: 0.706081
+  Validation best F1: 0.7769
+
+HELD-OUT TEST:
+  Accuracy=0.8103  Precision=0.6842  Recall=0.7222  F1=0.7027  ROC-AUC=0.7861  FPR=0.1500
+
+==============================================================================
+Decision Stump | seed 19
+==============================================================================
+  BLEU                         val F1=0.6812  val AUC=0.7909  threshold=0.750973
+  ROUGE-L                      val F1=0.6713  val AUC=0.7874  threshold=0.719424
+  METEOR                       val F1=0.6711  val AUC=0.7939  threshold=0.677215
+  BLEU & ROUGE-L               val F1=0.6812  val AUC=0.7909  threshold=0.750973
+  BLEU & METEOR                val F1=0.6812  val AUC=0.7909  threshold=0.750973
+  ROUGE-L & METEOR             val F1=0.6713  val AUC=0.7874  threshold=0.719424
+  BLEU & ROUGE-L & METEOR      val F1=0.6812  val AUC=0.7909  threshold=0.750973
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: BLEU
+  Validation threshold: 0.750973
+  Validation best F1: 0.6812
+
+HELD-OUT TEST:
+  Accuracy=0.8249  Precision=0.6724  Recall=0.7800  F1=0.7222  ROC-AUC=0.8117  FPR=0.1566
+
+==============================================================================
+Decision Stump | seed 31
+==============================================================================
+  BLEU                         val F1=0.6853  val AUC=0.8021  threshold=0.727891
+  ROUGE-L                      val F1=0.7027  val AUC=0.8205  threshold=0.692810
+  METEOR                       val F1=0.6483  val AUC=0.7744  threshold=0.720690
+  BLEU & ROUGE-L               val F1=0.6853  val AUC=0.8021  threshold=0.727891
+  BLEU & METEOR                val F1=0.6853  val AUC=0.8021  threshold=0.727891
+  ROUGE-L & METEOR             val F1=0.6483  val AUC=0.7744  threshold=0.720690
+  BLEU & ROUGE-L & METEOR      val F1=0.6853  val AUC=0.8021  threshold=0.727891
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: ROUGE-L
+  Validation threshold: 0.692810
+  Validation best F1: 0.7027
+
+HELD-OUT TEST:
+  Accuracy=0.8138  Precision=0.6667  Recall=0.7376  F1=0.7003  ROC-AUC=0.7916  FPR=0.1543
+
+==============================================================================
+Decision Stump | seed 43
+==============================================================================
+  BLEU                         val F1=0.7656  val AUC=0.8321  threshold=0.696552
+  ROUGE-L                      val F1=0.7634  val AUC=0.8332  threshold=0.666667
+  METEOR                       val F1=0.7273  val AUC=0.7998  threshold=0.704380
+  BLEU & ROUGE-L               val F1=0.7656  val AUC=0.8321  threshold=0.696552
+  BLEU & METEOR                val F1=0.7656  val AUC=0.8321  threshold=0.696552
+  ROUGE-L & METEOR             val F1=0.7634  val AUC=0.8332  threshold=0.666667
+  BLEU & ROUGE-L & METEOR      val F1=0.7656  val AUC=0.8321  threshold=0.696552
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: BLEU
+  Validation threshold: 0.696552
+  Validation best F1: 0.7656
+
+HELD-OUT TEST:
+  Accuracy=0.8353  Precision=0.7286  Recall=0.6939  F1=0.7108  ROC-AUC=0.7937  FPR=0.1064
+
+==============================================================================
+Decision Stump | seed 59
+==============================================================================
+  BLEU                         val F1=0.6905  val AUC=0.8047  threshold=0.710098
+  ROUGE-L                      val F1=0.6829  val AUC=0.7960  threshold=0.702055
+  METEOR                       val F1=0.6790  val AUC=0.7916  threshold=0.717314
+  BLEU & ROUGE-L               val F1=0.6905  val AUC=0.8047  threshold=0.710098
+  BLEU & METEOR                val F1=0.6905  val AUC=0.8047  threshold=0.710098
+  ROUGE-L & METEOR             val F1=0.6790  val AUC=0.7916  threshold=0.717314
+  BLEU & ROUGE-L & METEOR      val F1=0.6905  val AUC=0.8047  threshold=0.710098
+
+SELECTED USING VALIDATION ONLY:
+  Metric combination: BLEU
+  Validation threshold: 0.710098
+  Validation best F1: 0.6905
+
+HELD-OUT TEST:
+  Accuracy=0.8146  Precision=0.6460  Recall=0.7647  F1=0.7003  ROC-AUC=0.7995  FPR=0.1657
+
+==========================================================================================
+FINAL MATCHED-SPLIT SUMMARY
+==========================================================================================
+   Dataset               Model  Seeds  Accuracy_mean  Accuracy_std  Precision_mean  Precision_std  Recall_mean  Recall_std  F1_mean  F1_std  ROC-AUC_mean  ROC-AUC_std  PR-AUC_mean  PR-AUC_std  FPR_mean  FPR_std
+AgentArena Logistic Regression      5         0.8134        0.0063          0.6689         0.0291       0.7354      0.0629   0.6978  0.0193        0.8531       0.0178       0.6375      0.0093    0.1538   0.0287
+AgentArena         Naive Bayes      5         0.8134        0.0067          0.6735         0.0295       0.7204      0.0564   0.6936  0.0160        0.8580       0.0169       0.6334      0.0075    0.1477   0.0286
+AgentArena      Decision Stump      5         0.8198        0.0092          0.6796         0.0275       0.7397      0.0305   0.7073  0.0084        0.7965       0.0087       0.5787      0.0125    0.1466   0.0207
+
+PAPER-READY TABLE:
+   Dataset              Method        Accuracy       Precision          Recall              F1         ROC-AUC             FPR
+AgentArena Logistic Regression 0.8134 ± 0.0063 0.6689 ± 0.0291 0.7354 ± 0.0629 0.6978 ± 0.0193 0.8531 ± 0.0178 0.1538 ± 0.0287
+AgentArena         Naive Bayes 0.8134 ± 0.0067 0.6735 ± 0.0295 0.7204 ± 0.0564 0.6936 ± 0.0160 0.8580 ± 0.0169 0.1477 ± 0.0286
+AgentArena      Decision Stump 0.8198 ± 0.0092 0.6796 ± 0.0275 0.7397 ± 0.0305 0.7073 ± 0.0084 0.7965 ± 0.0087 0.1466 ± 0.0207
+
+Saved:
+D:\WormShield final\DonkeyRail_AgentArena_Matched_Splits_Results\donkeyrail_matched_per_seed.csv
+D:\WormShield final\DonkeyRail_AgentArena_Matched_Splits_Results\donkeyrail_matched_summary.csv
+D:\WormShield final\DonkeyRail_AgentArena_Matched_Splits_Results\selected_configurations.csv
+D:\WormShield final\DonkeyRail_AgentArena_Matched_Splits_Results\donkeyrail_paper_table.csv
+
+IMPORTANT:
+These results use the exact WormShield run-level split manifests. Metric combination and threshold selection use validation data only. The held-out test split is used only for final evaluation.

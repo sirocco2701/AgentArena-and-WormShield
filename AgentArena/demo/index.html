@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentArena 6G Sandbox</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="notification-tray" class="notification-tray" aria-live="polite" aria-atomic="true"></div>
+  <div class="page-shell">
+    <header class="site-title">
+      <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div>
+        <p class="site-eyebrow">6G Security Simulation</p>
+        <h1>AgentArena</h1>
+        <p class="site-subtitle">Model and replay autonomous threat propagation across AI-native infrastructure.</p>
+      </div>
+    </header>
+
+    <main class="content-grid">
+      <nav class="mode-tabs" aria-label="AgentArena modes">
+        <button id="tab-sandbox" class="mode-tab is-active" type="button" data-mode-target="sandbox" aria-pressed="true">
+          6G Sandbox
+        </button>
+        <button id="tab-dataset" class="mode-tab" type="button" data-mode-target="dataset" aria-pressed="false">
+          Trace Lab
+        </button>
+      </nav>
+
+      <section class="panel panel-wide mode-panel is-active" data-mode-panel="sandbox">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">1. 6G Service Graph</p>
+            <h2>Model Autonomous Threat Spread Across AI-Native 6G Infrastructure</h2>
+          </div>
+          <div class="status-strip" id="sim-stats"></div>
+        </div>
+
+        <div class="workspace-grid">
+          <aside class="control-stack">
+            <div class="control-card">
+              <h3>Live Model Runtime</h3>
+              <label>
+                Provider
+                <select id="provider-select">
+                  <option value="openai">OpenAI</option>
+                  <option value="gemini" selected>Gemini</option>
+                  <option value="anthropic">Claude</option>
+                </select>
+              </label>
+              <label>
+                Model preset
+                <select id="runtime-model-preset"></select>
+              </label>
+              <label>
+                Resolved model ID
+                <input id="runtime-model" type="text" value="gemini-2.5-flash-lite" placeholder="gemini-2.5-flash-lite">
+              </label>
+              <label>
+                API key
+                <input id="runtime-api-key" type="password" placeholder="sk-...">
+              </label>
+              <label>
+                Base URL
+                <input id="runtime-base-url" type="text" value="https://generativelanguage.googleapis.com/v1beta" placeholder="https://generativelanguage.googleapis.com/v1beta">
+              </label>
+              <label>
+                Max output tokens
+                <input id="runtime-max-output" type="number" min="64" max="512" value="500">
+              </label>
+              <div class="inline-actions">
+                <button id="save-runtime-btn" class="btn btn-primary">Save Runtime</button>
+                <button id="clear-runtime-btn" class="btn btn-ghost">Clear Key</button>
+              </div>
+              <p id="runtime-status" class="hint">
+                Configure a provider runtime to enable live node turns.
+              </p>
+              <p id="runtime-guidance" class="hint">
+                OpenAI, Gemini, and Claude are wired natively. Shared runtime settings only apply to nodes using the same provider.
+              </p>
+            </div>
+
+            <div class="control-card">
+              <h3>Add Node</h3>
+              <label>
+                Name
+                <input id="agent-name" type="text" placeholder="CU-Controller-7">
+              </label>
+              <label>
+                Role
+                <select id="agent-type">
+                  <option value="assistant">RAN Orchestrator</option>
+                  <option value="analyst">Security Analyst</option>
+                  <option value="runner">Edge Relay</option>
+                  <option value="sentinel">WormShield Sentinel</option>
+                  <option value="gateway">Slice Gateway</option>
+                  <option value="memory">Context Store</option>
+                  <option value="policy">Policy Enforcer</option>
+                  <option value="observer">Telemetry Probe</option>
+                </select>
+              </label>
+              <label>
+                Node behavior
+                <textarea id="agent-persona" rows="6"></textarea>
+              </label>
+              <label>
+                Node provider
+                <select id="agent-provider">
+                  <option value="openai">OpenAI</option>
+                  <option value="gemini" selected>Gemini</option>
+                  <option value="anthropic">Claude</option>
+                </select>
+              </label>
+              <label>
+                Node model preset
+                <select id="agent-model-preset"></select>
+              </label>
+              <label>
+                Node model ID
+                <input id="agent-model-override" type="text" placeholder="gemini-2.5-flash-lite">
+              </label>
+              <label>
+                Node API key
+                <input id="agent-api-key" type="password" placeholder="optional, leave blank to use shared runtime">
+              </label>
+              <label>
+                Node base URL
+                <input id="agent-base-url" type="text" placeholder="https://generativelanguage.googleapis.com/v1beta">
+              </label>
+              <label>
+                Node max output tokens
+                <input id="agent-max-output" type="number" min="64" max="512" value="500">
+              </label>
+              <button id="add-agent-btn" class="btn btn-primary">Add Node</button>
+              <p id="agent-guidance" class="hint">
+                Each node can use its own model settings and optional dedicated key. If the node key is blank, it inherits the shared runtime.
+              </p>
+            </div>
+
+            <div class="control-card">
+              <h3>Link Nodes</h3>
+              <label>
+                Source
+                <select id="edge-from"></select>
+              </label>
+              <label>
+                Target
+                <select id="edge-to"></select>
+              </label>
+              <button id="connect-btn" class="btn">Create Link</button>
+            </div>
+
+            <div class="control-card">
+              <h3>Node Roster</h3>
+              <div id="agent-roster" class="agent-roster"></div>
+            </div>
+          </aside>
+
+          <div class="viz-stack">
+            <div class="viz-card">
+              <div class="viz-head">
+                <h3>6G Service Graph</h3>
+                <p>Orange links show active propagation in the latest cycle. Queue depth appears in the node labels.</p>
+              </div>
+              <svg id="network-svg" viewBox="0 0 860 520" role="img" aria-label="6G service graph"></svg>
+            </div>
+
+            <div class="viz-card injection-card">
+              <div class="viz-head">
+                <h3>Incident Injection</h3>
+                <p>Launch a synthetic malicious control message at one entry node and watch the graph react one cycle at a time.</p>
+              </div>
+              <div class="injection-layout">
+                <label>
+                  Entry Node
+                  <select id="seed-agent"></select>
+                </label>
+                <label class="injection-payload">
+                  Control/Event Payload
+                  <textarea id="seed-prompt" rows="5"></textarea>
+                </label>
+                <div class="inline-actions inline-actions-vertical injection-actions">
+                  <button id="inject-btn" class="btn btn-accent">Inject Scenario</button>
+                  <button id="send-to-dataset-btn" class="btn">Send Run To Trace Lab</button>
+                </div>
+              </div>
+              <div class="injection-run-actions">
+                <button id="step-btn" class="btn">Run One Cycle</button>
+                <button id="play-btn" class="btn btn-primary">Autoplay</button>
+                <button id="reset-btn" class="btn btn-ghost">Reset</button>
+              </div>
+              <p class="hint">
+                Injection starts the run immediately, then advances one live node turn every 10 seconds so you can inspect each propagation hop as it unfolds.
+              </p>
+            </div>
+
+            <div class="viz-card">
+              <div class="viz-head">
+                <h3>Propagation Log</h3>
+                <p>Transmission rows are exportable. Decision rows show what each node concluded on its turn.</p>
+              </div>
+              <div id="event-log" class="event-log"></div>
+            </div>
+
+            <div class="viz-card">
+              <div class="viz-head">
+                <div>
+                  <p class="panel-kicker">Sandbox Trace Export</p>
+                  <h3>Export The Incident Trace</h3>
+                </div>
+              </div>
+              <div class="export-grid">
+                <div class="export-card">
+                  <h3>Full Run</h3>
+                  <p>Exports transmission rows from the 6G sandbox as a reusable propagation trace.</p>
+                  <button id="export-json-btn" class="btn btn-primary">Export JSON</button>
+                  <button id="export-csv-btn" class="btn">Export CSV</button>
+                </div>
+
+                <div class="export-card">
+                  <h3>First Wave Only</h3>
+                  <p>Captures the earliest propagation stage so you can isolate the first lateral-movement wave.</p>
+                  <button id="export-first-wave-btn" class="btn btn-accent">Export First-Wave CSV</button>
+                </div>
+
+                <div class="export-card">
+                  <h3>Schema</h3>
+                  <p class="schema-copy">
+                    Exported rows include <code>tick</code>, <code>source</code>, <code>target</code>,
+                    <code>content</code>, <code>riskScore</code>, <code>becameInfected</code>, and <code>note</code>.
+                  </p>
+                  <div id="export-status" class="hint">Run a service graph to generate exportable trace data.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel mode-panel" data-mode-panel="dataset">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">2. Trace Replay</p>
+            <h2>Upload A 6G Message Trace And Watch Exposure Over Time</h2>
+          </div>
+        </div>
+
+        <div class="analysis-grid">
+          <aside class="control-stack">
+            <div class="control-card">
+              <h3>Trace Intake</h3>
+              <label class="file-label">
+                Upload CSV or JSON
+                <input id="dataset-file" type="file" accept=".csv,.json,application/json,text/csv">
+              </label>
+              <div class="inline-actions">
+                <button id="load-sample-btn" class="btn btn-primary">Load Built-In Trace</button>
+                <a class="btn btn-ghost" href="./data/sample-agent-worm-log.csv" download>Download Sample CSV</a>
+              </div>
+              <p class="hint">
+                Expected columns: <code>timestamp</code>, <code>source</code>, <code>target</code>,
+                <code>content</code>, plus optional labels.
+              </p>
+            </div>
+
+            <div class="control-card">
+              <h3>Detection Heuristics</h3>
+              <label>
+                Indicators and patterns
+                <textarea id="pattern-list" rows="8"></textarea>
+              </label>
+              <button id="rescan-btn" class="btn">Re-Scan Trace</button>
+            </div>
+
+            <div class="control-card">
+              <h3>Replay Timeline</h3>
+              <label for="timeline-slider">Replay position</label>
+              <input id="timeline-slider" type="range" min="0" max="0" value="0">
+              <div class="inline-actions">
+                <button id="timeline-play-btn" class="btn btn-primary">Play Timeline</button>
+                <button id="timeline-reset-btn" class="btn btn-ghost">Reset View</button>
+              </div>
+              <p id="timeline-caption" class="hint">Load a trace to begin replay.</p>
+            </div>
+          </aside>
+
+          <div class="viz-stack">
+            <div class="viz-card">
+              <div class="viz-head">
+                <h3>Exposure Map</h3>
+                <p>Nodes turn from clean to exposed to infected as risky control messages move through the trace.</p>
+              </div>
+              <div id="dataset-stats" class="status-strip"></div>
+              <svg id="dataset-svg" viewBox="0 0 860 420" role="img" aria-label="Trace propagation graph"></svg>
+            </div>
+
+            <div class="viz-card">
+              <div class="viz-head">
+                <h3>Flagged Events</h3>
+                <p>Highest-risk rows float to the top, with a replayable timeline underneath.</p>
+              </div>
+              <div id="flagged-records" class="record-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\wormshield_semantic_relation_ablation.py
+
+
+Using main WormShield script:
+D:\WormShield final\wormshield_learned_payload.py
+
+AgentArena CSV:
+D:\WormShield final\wormshield-observable-main.csv
+Transformer device: cpu
+
+Loading cached AgentArena learned-payload features...
+
+Generating separate MiniLM embeddings for incoming messages...
+
+Loading semantic encoder:
+sentence-transformers/all-MiniLM-L6-v2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6083.24it/s]
+Semantic embeddings: 64/1623
+Semantic embeddings: 128/1623
+Semantic embeddings: 192/1623
+Semantic embeddings: 256/1623
+Semantic embeddings: 320/1623
+Semantic embeddings: 384/1623
+Semantic embeddings: 448/1623
+Semantic embeddings: 512/1623
+Semantic embeddings: 576/1623
+Semantic embeddings: 640/1623
+Semantic embeddings: 704/1623
+Semantic embeddings: 768/1623
+Semantic embeddings: 832/1623
+Semantic embeddings: 896/1623
+Semantic embeddings: 960/1623
+Semantic embeddings: 1024/1623
+Semantic embeddings: 1088/1623
+Semantic embeddings: 1152/1623
+Semantic embeddings: 1216/1623
+Semantic embeddings: 1280/1623
+Semantic embeddings: 1344/1623
+Semantic embeddings: 1408/1623
+Semantic embeddings: 1472/1623
+Semantic embeddings: 1536/1623
+Semantic embeddings: 1600/1623
+Semantic embeddings: 1623/1623
+
+
+Generating separate MiniLM embeddings for model outputs...
+Semantic embeddings: 64/1623
+Semantic embeddings: 128/1623
+Semantic embeddings: 192/1623
+Semantic embeddings: 256/1623
+Semantic embeddings: 320/1623
+Semantic embeddings: 384/1623
+Semantic embeddings: 448/1623
+Semantic embeddings: 512/1623
+Semantic embeddings: 576/1623
+Semantic embeddings: 640/1623
+Semantic embeddings: 704/1623
+Semantic embeddings: 768/1623
+Semantic embeddings: 832/1623
+Semantic embeddings: 896/1623
+Semantic embeddings: 960/1623
+Semantic embeddings: 1024/1623
+Semantic embeddings: 1088/1623
+Semantic embeddings: 1152/1623
+Semantic embeddings: 1216/1623
+Semantic embeddings: 1280/1623
+Semantic embeddings: 1344/1623
+Semantic embeddings: 1408/1623
+Semantic embeddings: 1472/1623
+Semantic embeddings: 1536/1623
+Semantic embeddings: 1600/1623
+Semantic embeddings: 1623/1623
+
+
+Generating separate MiniLM embeddings for proposed forwards...
+Semantic embeddings: 64/1623
+Semantic embeddings: 128/1623
+Semantic embeddings: 192/1623
+Semantic embeddings: 256/1623
+Semantic embeddings: 320/1623
+Semantic embeddings: 384/1623
+Semantic embeddings: 448/1623
+Semantic embeddings: 512/1623
+Semantic embeddings: 576/1623
+Semantic embeddings: 640/1623
+Semantic embeddings: 704/1623
+Semantic embeddings: 768/1623
+Semantic embeddings: 832/1623
+Semantic embeddings: 896/1623
+Semantic embeddings: 960/1623
+Semantic embeddings: 1024/1623
+Semantic embeddings: 1088/1623
+Semantic embeddings: 1152/1623
+Semantic embeddings: 1216/1623
+Semantic embeddings: 1280/1623
+Semantic embeddings: 1344/1623
+Semantic embeddings: 1408/1623
+Semantic embeddings: 1472/1623
+Semantic embeddings: 1536/1623
+Semantic embeddings: 1600/1623
+Semantic embeddings: 1623/1623
+
+
+Saved explicit relation cache:
+D:\WormShield final\WormShield_Semantic_Relation_Ablation\relation_embedding_cache.pkl
+
+Variants:
+  current_concat: 385 features
+  cosine_relation: 4 features
+  absdiff_in_forward: 385 features
+  concat_plus_cosine: 388 features
+
+==============================================================================
+SEED 7
+==============================================================================
+Train: 951 events, 348 runs
+Val:   208 events, 87 runs
+Test:  464 events, 186 runs
+
+  Variant: current_concat
+    val-selected threshold: 0.4615
+    test F1 (selected): 0.8662
+    test F1 (0.5): 0.8551
+    ROC-AUC: 0.9621
+    FPR (selected): 0.0531
+
+  Variant: cosine_relation
+    val-selected threshold: 0.5774
+    test F1 (selected): 0.7203
+    test F1 (0.5): 0.7297
+    ROC-AUC: 0.8956
+    FPR (selected): 0.1219
+
+  Variant: absdiff_in_forward
+    val-selected threshold: 0.5000
+    test F1 (selected): 0.7850
+    test F1 (0.5): 0.7850
+    ROC-AUC: 0.9335
+    FPR (selected): 0.1062
+
+  Variant: concat_plus_cosine
+    val-selected threshold: 0.6709
+    test F1 (selected): 0.8669
+    test F1 (0.5): 0.8806
+    ROC-AUC: 0.9778
+    FPR (selected): 0.0156
+
+==============================================================================
+SEED 19
+==============================================================================
+Train: 868 events, 348 runs
+Val:   241 events, 87 runs
+Test:  514 events, 186 runs
+
+  Variant: current_concat
+    val-selected threshold: 0.3492
+    test F1 (selected): 0.8571
+    test F1 (0.5): 0.8503
+    ROC-AUC: 0.9639
+    FPR (selected): 0.0714
+
+  Variant: cosine_relation
+    val-selected threshold: 0.4772
+    test F1 (selected): 0.7464
+    test F1 (0.5): 0.7434
+    ROC-AUC: 0.9094
+    FPR (selected): 0.1786
+
+  Variant: absdiff_in_forward
+    val-selected threshold: 0.6448
+    test F1 (selected): 0.8081
+    test F1 (0.5): 0.7862
+    ROC-AUC: 0.9236
+    FPR (selected): 0.0742
+
+  Variant: concat_plus_cosine
+    val-selected threshold: 0.7799
+    test F1 (selected): 0.8708
+    test F1 (0.5): 0.9066
+    ROC-AUC: 0.9810
+    FPR (selected): 0.0082
+
+==============================================================================
+SEED 31
+==============================================================================
+Train: 911 events, 348 runs
+Val:   234 events, 87 runs
+Test:  478 events, 186 runs
+
+  Variant: current_concat
+    val-selected threshold: 0.7637
+    test F1 (selected): 0.8446
+    test F1 (0.5): 0.8857
+    ROC-AUC: 0.9714
+    FPR (selected): 0.0119
+
+  Variant: cosine_relation
+    val-selected threshold: 0.5636
+    test F1 (selected): 0.7817
+    test F1 (0.5): 0.7573
+    ROC-AUC: 0.9214
+    FPR (selected): 0.0950
+
+  Variant: absdiff_in_forward
+    val-selected threshold: 0.5548
+    test F1 (selected): 0.8304
+    test F1 (0.5): 0.8367
+    ROC-AUC: 0.9412
+    FPR (selected): 0.0831
+
+  Variant: concat_plus_cosine
+    val-selected threshold: 0.4965
+    test F1 (selected): 0.9176
+    test F1 (0.5): 0.9176
+    ROC-AUC: 0.9772
+    FPR (selected): 0.0297
+
+==============================================================================
+SEED 43
+==============================================================================
+Train: 907 events, 348 runs
+Val:   212 events, 87 runs
+Test:  504 events, 186 runs
+
+  Variant: current_concat
+    val-selected threshold: 0.4961
+    test F1 (selected): 0.8399
+    test F1 (0.5): 0.8357
+    ROC-AUC: 0.9613
+    FPR (selected): 0.0448
+
+  Variant: cosine_relation
+    val-selected threshold: 0.5850
+    test F1 (selected): 0.7347
+    test F1 (0.5): 0.7372
+    ROC-AUC: 0.9005
+    FPR (selected): 0.1092
+
+  Variant: absdiff_in_forward
+    val-selected threshold: 0.3094
+    test F1 (selected): 0.7602
+    test F1 (0.5): 0.7871
+    ROC-AUC: 0.9318
+    FPR (selected): 0.1821
+
+  Variant: concat_plus_cosine
+    val-selected threshold: 0.4260
+    test F1 (selected): 0.9263
+    test F1 (0.5): 0.9181
+    ROC-AUC: 0.9767
+    FPR (selected): 0.0168
+
+==============================================================================
+SEED 59
+==============================================================================
+Train: 884 events, 348 runs
+Val:   259 events, 87 runs
+Test:  480 events, 186 runs
+
+  Variant: current_concat
+    val-selected threshold: 0.5531
+    test F1 (selected): 0.8676
+    test F1 (0.5): 0.8736
+    ROC-AUC: 0.9681
+    FPR (selected): 0.0523
+
+  Variant: cosine_relation
+    val-selected threshold: 0.7230
+    test F1 (selected): 0.7012
+    test F1 (0.5): 0.7338
+    ROC-AUC: 0.9015
+    FPR (selected): 0.0785
+
+  Variant: absdiff_in_forward
+    val-selected threshold: 0.6181
+    test F1 (selected): 0.7739
+    test F1 (0.5): 0.7887
+    ROC-AUC: 0.9228
+    FPR (selected): 0.0698
+
+  Variant: concat_plus_cosine
+    val-selected threshold: 0.5000
+    test F1 (selected): 0.9259
+    test F1 (0.5): 0.9259
+    ROC-AUC: 0.9832
+    FPR (selected): 0.0262
+
+==============================================================================
+SUMMARY
+==============================================================================
+           Variant            Protocol  Seeds  accuracy_mean  precision_mean  recall_mean  f1_mean  roc_auc_mean  pr_auc_mean  fpr_mean
+absdiff_in_forward           fixed_0.5      5       0.875112        0.765001     0.831549 0.796742      0.930576     0.875578  0.106580
+absdiff_in_forward validation_selected      5       0.873041        0.774723     0.815335 0.791539      0.930576     0.875578  0.103070
+concat_plus_cosine           fixed_0.5      5       0.948617        0.943424     0.879450 0.909762      0.979187     0.962401  0.022114
+concat_plus_cosine validation_selected      5       0.945005        0.950017     0.860642 0.901515      0.979187     0.962401  0.019302
+   cosine_relation           fixed_0.5      5       0.833578        0.685514     0.806597 0.740264      0.905679     0.820975  0.154696
+   cosine_relation validation_selected      5       0.843521        0.732940     0.747520 0.736843      0.905679     0.820975  0.116627
+    current_concat           fixed_0.5      5       0.919412        0.878387     0.843567 0.860097      0.965363     0.928305  0.048683
+    current_concat validation_selected      5       0.917325        0.885179     0.831262 0.855093      0.965363     0.928305  0.046713
+
+Saved:
+D:\WormShield final\WormShield_Semantic_Relation_Ablation\semantic_relation_per_seed.csv
+D:\WormShield final\WormShield_Semantic_Relation_Ablation\semantic_relation_summary.csv
+D:\WormShield final\WormShield_Semantic_Relation_Ablation\semantic_relation_predictions.csv
+D:\WormShield final\WormShield_Semantic_Relation_Ablation\semantic_relation_manifest.json

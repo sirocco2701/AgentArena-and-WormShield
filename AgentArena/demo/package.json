@@ -1,0 +1,12 @@
+{
+  "name": "agentarena-huggingface-space",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AgentArena Docker Space bundle for Hugging Face",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

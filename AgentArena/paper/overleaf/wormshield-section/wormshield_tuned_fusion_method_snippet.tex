@@ -1,0 +1,60 @@
+% Overleaf-ready method replacement snippet for the tuned-fusion
+% WormShield variant. Paste this into Section V if you want the
+% method description to match the exploratory tuned-fusion results.
+% Required packages: amsmath
+
+\subsection{Score-Level Fusion}
+
+The tuned WormShield variant uses three complementary branch
+detectors rather than a single classifier over concatenated
+features. The similarity branch measures local surface-level or
+structural reuse, the semantic branch captures paraphrastic
+retention using MiniLM embeddings, and the payload branch measures
+whether the current relay step still contains worm-relevant harmful
+content cues. Let $s_{\mathrm{sim}}$,
+$s_{\mathrm{sem}}$, and $s_{\mathrm{pay}}$ denote the normalized
+scores of the three branches.
+
+Rather than relying on any individual signal, WormShield combines
+them using a weighted fusion rule,
+\begin{equation}
+s_{\mathrm{WG}} =
+w_{\mathrm{sim}} s_{\mathrm{sim}} +
+w_{\mathrm{sem}} s_{\mathrm{sem}} +
+w_{\mathrm{pay}} s_{\mathrm{pay}},
+\label{eq:wg-score-fusion}
+\end{equation}
+where
+\begin{equation}
+w_{\mathrm{sim}} + w_{\mathrm{sem}} + w_{\mathrm{pay}} = 1.
+\end{equation}
+
+For the exploratory tuned-fusion analysis in
+Section~\ref{sec:simulation-results}, the investigated operating
+point uses
+\begin{equation}
+(w_{\mathrm{sim}}, w_{\mathrm{sem}}, w_{\mathrm{pay}})
+=
+(0.50, 0.06, 0.44).
+\label{eq:wg-exploratory-weights}
+\end{equation}
+
+A relay interaction is classified as propagation-capable when
+\begin{equation}
+\hat{y}_{i} =
+\begin{cases}
+1, & s_{\mathrm{WG}, i} \geq \tau, \\
+0, & s_{\mathrm{WG}, i} < \tau,
+\end{cases}
+\label{eq:wg-threshold}
+\end{equation}
+where $\tau$ is the fixed decision threshold used at evaluation
+time.
+
+\paragraph*{Important caveat.}
+The specific weight triple in
+Eq.~\ref{eq:wg-exploratory-weights} is currently best interpreted
+as an exploratory sensitivity result rather than as a final
+validation-selected deployment configuration. If the final paper
+keeps these exact weights as the main model, the tuning protocol
+should be rerun on held-out development data only.

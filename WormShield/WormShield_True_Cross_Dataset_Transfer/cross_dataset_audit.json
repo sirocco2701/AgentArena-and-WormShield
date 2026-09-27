@@ -1,0 +1,36 @@
+{
+  "agentarena": {
+    "rows": 1623,
+    "positive": 473,
+    "negative": 1150,
+    "unique_runs": 621
+  },
+  "aiworm_train": {
+    "rows": 9981,
+    "positive": 4981,
+    "negative": 5000,
+    "unique_people": 100
+  },
+  "aiworm_test": {
+    "rows": 2786,
+    "positive": 1286,
+    "negative": 1500,
+    "unique_people": 30
+  },
+  "semantic_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "payload_model": "protectai/deberta-v3-base-prompt-injection-v2",
+  "feature_count": 385,
+  "xgb_params": {
+    "n_estimators": 160,
+    "max_depth": 3,
+    "learning_rate": 0.06,
+    "subsample": 0.9,
+    "colsample_bytree": 0.9,
+    "reg_lambda": 1.0,
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "n_jobs": -1
+  },
+  "target_domain_training": false,
+  "target_domain_threshold_tuning": false
+}

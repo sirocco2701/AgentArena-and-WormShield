@@ -1,0 +1,90 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\wormshield_low_fpr_eval.py --dataset aiworm --target-fpr 0.03
+
+
+No WormShield models will be retrained.
+Thresholds are selected from validation data only.
+Predeclared validation FPR constraint: 0.0300 (3.00%)
+
+Do not sweep target FPR values and choose one based on held-out test performance.
+
+Loading AI-Worm train features:
+D:\WormShield final\WormShield_Learned_Payload_Results\feature_cache\aiworm_train_learned_payload__protectai_deberta-v3-base-prompt-injection-v2.pkl
+
+Loading AI-Worm official test features:
+D:\WormShield final\WormShield_Learned_Payload_Results\feature_cache\aiworm_test_learned_payload__protectai_deberta-v3-base-prompt-injection-v2.pkl
+
+==============================================================================
+AIWORM | SEED 7
+==============================================================================
+Target validation FPR: 0.0300
+Selected threshold: 0.00753654
+Validation at selected threshold:
+  Recall=1.0000  Precision=0.9708  F1=0.9852  FPR=0.0300
+Held-out test at selected threshold:
+  Accuracy=0.9917  Precision=0.9907  Recall=0.9914  F1=0.9911  ROC-AUC=0.9991  PR-AUC=0.9984  FPR=0.0080
+Reference test at fixed threshold 0.5:
+  Recall=0.2481  F1=0.3973  FPR=0.0007
+
+==============================================================================
+AIWORM | SEED 19
+==============================================================================
+Target validation FPR: 0.0300
+Selected threshold: 0.00655358
+Validation at selected threshold:
+  Recall=1.0000  Precision=0.9708  F1=0.9852  FPR=0.0300
+Held-out test at selected threshold:
+  Accuracy=0.9903  Precision=0.9854  Recall=0.9938  F1=0.9895  ROC-AUC=0.9993  PR-AUC=0.9991  FPR=0.0127
+Reference test at fixed threshold 0.5:
+  Recall=0.3390  F1=0.5064  FPR=0.0000
+
+==============================================================================
+AIWORM | SEED 31
+==============================================================================
+Target validation FPR: 0.0300
+Selected threshold: 0.00786617
+Validation at selected threshold:
+  Recall=1.0000  Precision=0.9708  F1=0.9852  FPR=0.0300
+Held-out test at selected threshold:
+  Accuracy=0.9867  Precision=0.9867  Recall=0.9844  F1=0.9856  ROC-AUC=0.9984  PR-AUC=0.9976  FPR=0.0113
+Reference test at fixed threshold 0.5:
+  Recall=0.2247  F1=0.3668  FPR=0.0007
+
+==============================================================================
+AIWORM | SEED 43
+==============================================================================
+Target validation FPR: 0.0300
+Selected threshold: 0.00419834
+Validation at selected threshold:
+  Recall=1.0000  Precision=0.9717  F1=0.9857  FPR=0.0290
+Held-out test at selected threshold:
+  Accuracy=0.9882  Precision=0.9808  Recall=0.9938  F1=0.9873  ROC-AUC=0.9985  PR-AUC=0.9975  FPR=0.0167
+Reference test at fixed threshold 0.5:
+  Recall=0.2037  F1=0.3383  FPR=0.0007
+
+==============================================================================
+AIWORM | SEED 59
+==============================================================================
+Target validation FPR: 0.0300
+Selected threshold: 0.00669763
+Validation at selected threshold:
+  Recall=1.0000  Precision=0.9708  F1=0.9852  FPR=0.0300
+Held-out test at selected threshold:
+  Accuracy=0.9853  Precision=0.9852  Recall=0.9829  F1=0.9840  ROC-AUC=0.9982  PR-AUC=0.9971  FPR=0.0127
+Reference test at fixed threshold 0.5:
+  Recall=0.1928  F1=0.3233  FPR=0.0000
+
+==========================================================================================================================================================================
+LOW-FPR BUDGET VALIDATION-SELECTED OPERATING POINT
+==========================================================================================================================================================================
+Dataset     Threshold           Accuracy            Precision           Recall              F1                  ROC-AUC             PR-AUC              FPR                 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AI-Worm     0.0066 +/- 0.0013   0.9884 +/- 0.0023   0.9858 +/- 0.0032   0.9893 +/- 0.0047   0.9875 +/- 0.0026   0.9987 +/- 0.0004   0.9979 +/- 0.0007   0.0123 +/- 0.0028   
+
+Saved:
+D:\WormShield final\WormShield_Learned_Payload_Results\low_fpr_evaluation\low_fpr_per_seed.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\low_fpr_evaluation\low_fpr_summary.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\low_fpr_evaluation\selected_low_fpr_thresholds.csv
+
+Interpretation rule:
+The selected threshold is legitimate because it comes only from validation predictions. The held-out test set is used only for final evaluation.

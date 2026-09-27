@@ -1,0 +1,235 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\wormshield_leave_one_task_out.py
+
+\nUsing main WormShield script:
+D:\WormShield final\wormshield_learned_payload.py
+
+AgentArena CSV:
+D:\WormShield final\wormshield-observable-main.csv
+
+Task-family column:
+task_family
+Transformer device: cpu
+
+Loading cached AgentArena learned-payload features...
+
+Held-out task families:
+  ran_orchestration: 477 events, 172 runs, 133 positive, 344 negative
+  slice_management: 469 events, 177 runs, 151 positive, 318 negative
+  assurance_triage: 402 events, 154 runs, 112 positive, 290 negative
+  edge_mesh: 275 events, 118 runs, 77 positive, 198 negative
+
+==============================================================================
+HELD-OUT TASK: ran_orchestration
+==============================================================================
+
+Seed 7
+  train: {'n': 902, 'negative_n': 633, 'positive_n': 269, 'runs': 359}
+  val:   {'n': 244, 'negative_n': 173, 'positive_n': 71, 'runs': 90}
+  test:  {'n': 477, 'negative_n': 344, 'positive_n': 133, 'runs': 172}
+  validation-selected threshold: 0.19 (validation F1=0.8873)
+  held-out F1 (val threshold): 0.8000
+  held-out ROC-AUC: 0.9688
+  held-out FPR: 0.1366
+
+Seed 19
+  train: {'n': 908, 'negative_n': 632, 'positive_n': 276, 'runs': 359}
+  val:   {'n': 238, 'negative_n': 174, 'positive_n': 64, 'runs': 90}
+  test:  {'n': 477, 'negative_n': 344, 'positive_n': 133, 'runs': 172}
+  validation-selected threshold: 0.62 (validation F1=0.8504)
+  held-out F1 (val threshold): 0.8560
+  held-out ROC-AUC: 0.9697
+  held-out FPR: 0.0291
+
+Seed 31
+  train: {'n': 921, 'negative_n': 643, 'positive_n': 278, 'runs': 359}
+  val:   {'n': 225, 'negative_n': 163, 'positive_n': 62, 'runs': 90}
+  test:  {'n': 477, 'negative_n': 344, 'positive_n': 133, 'runs': 172}
+  validation-selected threshold: 0.39 (validation F1=0.8889)
+  held-out F1 (val threshold): 0.8315
+  held-out ROC-AUC: 0.9680
+  held-out FPR: 0.0872
+
+Seed 43
+  train: {'n': 916, 'negative_n': 649, 'positive_n': 267, 'runs': 359}
+  val:   {'n': 230, 'negative_n': 157, 'positive_n': 73, 'runs': 90}
+  test:  {'n': 477, 'negative_n': 344, 'positive_n': 133, 'runs': 172}
+  validation-selected threshold: 0.33 (validation F1=0.8696)
+  held-out F1 (val threshold): 0.8470
+  held-out ROC-AUC: 0.9667
+  held-out FPR: 0.0843
+
+Seed 59
+  train: {'n': 906, 'negative_n': 625, 'positive_n': 281, 'runs': 359}
+  val:   {'n': 240, 'negative_n': 181, 'positive_n': 59, 'runs': 90}
+  test:  {'n': 477, 'negative_n': 344, 'positive_n': 133, 'runs': 172}
+  validation-selected threshold: 0.82 (validation F1=0.8704)
+  held-out F1 (val threshold): 0.8333
+  held-out ROC-AUC: 0.9713
+  held-out FPR: 0.0203
+
+==============================================================================
+HELD-OUT TASK: slice_management
+==============================================================================
+
+Seed 7
+  train: {'n': 936, 'negative_n': 685, 'positive_n': 251, 'runs': 356}
+  val:   {'n': 218, 'negative_n': 147, 'positive_n': 71, 'runs': 88}
+  test:  {'n': 469, 'negative_n': 318, 'positive_n': 151, 'runs': 177}
+  validation-selected threshold: 0.47 (validation F1=0.9065)
+  held-out F1 (val threshold): 0.8630
+  held-out ROC-AUC: 0.9543
+  held-out FPR: 0.0472
+
+Seed 19
+  train: {'n': 945, 'negative_n': 679, 'positive_n': 266, 'runs': 356}
+  val:   {'n': 209, 'negative_n': 153, 'positive_n': 56, 'runs': 88}
+  test:  {'n': 469, 'negative_n': 318, 'positive_n': 151, 'runs': 177}
+  validation-selected threshold: 0.81 (validation F1=0.8762)
+  held-out F1 (val threshold): 0.7686
+  held-out ROC-AUC: 0.9602
+  held-out FPR: 0.0189
+
+Seed 31
+  train: {'n': 931, 'negative_n': 664, 'positive_n': 267, 'runs': 356}
+  val:   {'n': 223, 'negative_n': 168, 'positive_n': 55, 'runs': 88}
+  test:  {'n': 469, 'negative_n': 318, 'positive_n': 151, 'runs': 177}
+  validation-selected threshold: 0.51 (validation F1=0.9358)
+  held-out F1 (val threshold): 0.8581
+  held-out ROC-AUC: 0.9570
+  held-out FPR: 0.0440
+
+Seed 43
+  train: {'n': 911, 'negative_n': 648, 'positive_n': 263, 'runs': 356}
+  val:   {'n': 243, 'negative_n': 184, 'positive_n': 59, 'runs': 88}
+  test:  {'n': 469, 'negative_n': 318, 'positive_n': 151, 'runs': 177}
+  validation-selected threshold: 0.56 (validation F1=0.8525)
+  held-out F1 (val threshold): 0.8443
+  held-out ROC-AUC: 0.9494
+  held-out FPR: 0.0503
+
+Seed 59
+  train: {'n': 920, 'negative_n': 658, 'positive_n': 262, 'runs': 356}
+  val:   {'n': 234, 'negative_n': 174, 'positive_n': 60, 'runs': 88}
+  test:  {'n': 469, 'negative_n': 318, 'positive_n': 151, 'runs': 177}
+  validation-selected threshold: 0.68 (validation F1=0.9076)
+  held-out F1 (val threshold): 0.8060
+  held-out ROC-AUC: 0.9553
+  held-out FPR: 0.0283
+
+==============================================================================
+HELD-OUT TASK: assurance_triage
+==============================================================================
+
+Seed 7
+  train: {'n': 966, 'negative_n': 675, 'positive_n': 291, 'runs': 374}
+  val:   {'n': 255, 'negative_n': 185, 'positive_n': 70, 'runs': 93}
+  test:  {'n': 402, 'negative_n': 290, 'positive_n': 112, 'runs': 154}
+  validation-selected threshold: 0.55 (validation F1=0.8702)
+  held-out F1 (val threshold): 0.7861
+  held-out ROC-AUC: 0.9607
+  held-out FPR: 0.0345
+
+Seed 19
+  train: {'n': 982, 'negative_n': 681, 'positive_n': 301, 'runs': 374}
+  val:   {'n': 239, 'negative_n': 179, 'positive_n': 60, 'runs': 93}
+  test:  {'n': 402, 'negative_n': 290, 'positive_n': 112, 'runs': 154}
+  validation-selected threshold: 0.78 (validation F1=0.9091)
+  held-out F1 (val threshold): 0.6923
+  held-out ROC-AUC: 0.9537
+  held-out FPR: 0.0241
+
+Seed 31
+  train: {'n': 992, 'negative_n': 689, 'positive_n': 303, 'runs': 374}
+  val:   {'n': 229, 'negative_n': 171, 'positive_n': 58, 'runs': 93}
+  test:  {'n': 402, 'negative_n': 290, 'positive_n': 112, 'runs': 154}
+  validation-selected threshold: 0.52 (validation F1=0.9060)
+  held-out F1 (val threshold): 0.7882
+  held-out ROC-AUC: 0.9544
+  held-out FPR: 0.0379
+
+Seed 43
+  train: {'n': 968, 'negative_n': 687, 'positive_n': 281, 'runs': 374}
+  val:   {'n': 253, 'negative_n': 173, 'positive_n': 80, 'runs': 93}
+  test:  {'n': 402, 'negative_n': 290, 'positive_n': 112, 'runs': 154}
+  validation-selected threshold: 0.55 (validation F1=0.8974)
+  held-out F1 (val threshold): 0.8116
+  held-out ROC-AUC: 0.9582
+  held-out FPR: 0.0379
+
+Seed 59
+  train: {'n': 977, 'negative_n': 696, 'positive_n': 281, 'runs': 374}
+  val:   {'n': 244, 'negative_n': 164, 'positive_n': 80, 'runs': 93}
+  test:  {'n': 402, 'negative_n': 290, 'positive_n': 112, 'runs': 154}
+  validation-selected threshold: 0.47 (validation F1=0.8902)
+  held-out F1 (val threshold): 0.8302
+  held-out ROC-AUC: 0.9591
+  held-out FPR: 0.0414
+
+==============================================================================
+HELD-OUT TASK: edge_mesh
+==============================================================================
+
+Seed 7
+  train: {'n': 1117, 'negative_n': 796, 'positive_n': 321, 'runs': 402}
+  val:   {'n': 231, 'negative_n': 156, 'positive_n': 75, 'runs': 101}
+  test:  {'n': 275, 'negative_n': 198, 'positive_n': 77, 'runs': 118}
+  validation-selected threshold: 0.35 (validation F1=0.8846)
+  held-out F1 (val threshold): 0.8772
+  held-out ROC-AUC: 0.9852
+  held-out FPR: 0.0960
+
+Seed 19
+  train: {'n': 1089, 'negative_n': 762, 'positive_n': 327, 'runs': 402}
+  val:   {'n': 259, 'negative_n': 190, 'positive_n': 69, 'runs': 101}
+  test:  {'n': 275, 'negative_n': 198, 'positive_n': 77, 'runs': 118}
+  validation-selected threshold: 0.58 (validation F1=0.8841)
+  held-out F1 (val threshold): 0.8947
+  held-out ROC-AUC: 0.9888
+  held-out FPR: 0.0354
+
+Seed 31
+  train: {'n': 1086, 'negative_n': 768, 'positive_n': 318, 'runs': 402}
+  val:   {'n': 262, 'negative_n': 184, 'positive_n': 78, 'runs': 101}
+  test:  {'n': 275, 'negative_n': 198, 'positive_n': 77, 'runs': 118}
+  validation-selected threshold: 0.61 (validation F1=0.9012)
+  held-out F1 (val threshold): 0.9150
+  held-out ROC-AUC: 0.9848
+  held-out FPR: 0.0303
+
+Seed 43
+  train: {'n': 1095, 'negative_n': 769, 'positive_n': 326, 'runs': 402}
+  val:   {'n': 253, 'negative_n': 183, 'positive_n': 70, 'runs': 101}
+  test:  {'n': 275, 'negative_n': 198, 'positive_n': 77, 'runs': 118}
+  validation-selected threshold: 0.58 (validation F1=0.8824)
+  held-out F1 (val threshold): 0.9020
+  held-out ROC-AUC: 0.9846
+  held-out FPR: 0.0354
+
+Seed 59
+  train: {'n': 1080, 'negative_n': 761, 'positive_n': 319, 'runs': 402}
+  val:   {'n': 268, 'negative_n': 191, 'positive_n': 77, 'runs': 101}
+  test:  {'n': 275, 'negative_n': 198, 'positive_n': 77, 'runs': 118}
+  validation-selected threshold: 0.44 (validation F1=0.9020)
+  held-out F1 (val threshold): 0.8982
+  held-out ROC-AUC: 0.9856
+  held-out FPR: 0.0758
+
+==============================================================================
+SUMMARY
+==============================================================================
+    Held-Out Task            Protocol  Seeds  accuracy_mean  precision_mean  recall_mean  f1_mean  roc_auc_mean  pr_auc_mean  fpr_mean
+ assurance_triage           fixed_0.5      5       0.900498        0.879790     0.744643 0.806432      0.957217     0.901482  0.039310
+ assurance_triage validation_selected      5       0.892040        0.886194     0.703571 0.781668      0.957217     0.901482  0.035172
+        edge_mesh           fixed_0.5      5       0.943273        0.871836     0.935065 0.902271      0.985806     0.965387  0.053535
+        edge_mesh validation_selected      5       0.940364        0.873364     0.927273 0.897425      0.985806     0.965387  0.054545
+ran_orchestration           fixed_0.5      5       0.916562        0.839165     0.867669 0.853030      0.968898     0.928937  0.064535
+ran_orchestration validation_selected      5       0.905241        0.833249     0.845113 0.833570      0.968898     0.928937  0.071512
+ slice_management           fixed_0.5      5       0.910448        0.887893     0.826490 0.855999      0.955229     0.919530  0.049686
+ slice_management validation_selected      5       0.898934        0.908322     0.765563 0.828007      0.955229     0.919530  0.037736
+
+Saved:
+D:\WormShield final\WormShield_Leave_One_Task_Out\leave_one_task_out_per_seed.csv
+D:\WormShield final\WormShield_Leave_One_Task_Out\leave_one_task_out_summary.csv
+D:\WormShield final\WormShield_Leave_One_Task_Out\leave_one_task_out_predictions.csv
+D:\WormShield final\WormShield_Leave_One_Task_Out\leave_one_task_out_split_manifest.json

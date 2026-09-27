@@ -1,0 +1,34 @@
+NETWORK-SIZE THREAT INTERPRETATION
+----------------------------------
+Absolute spread under no defense:
+  4 agents: 1.90 reached agents/run
+  20 agents: 1.83 reached agents/run
+  Descriptively, larger networks expose FEWER agents in absolute terms under no defense.
+
+Relative spread under no defense:
+  4 agents: 63.39% of non-seed agents reached
+  20 agents: 9.62% of non-seed agents reached
+  Descriptively, the worm occupies a SMALLER fraction of the network as network size increases from the smallest to the largest evaluated setting, even if absolute reach may increase.
+
+Highest mean no-defense reach fraction: 4 agents (63.39%).
+Deepest mean no-defense propagation: 20 agents (depth 1.62).
+
+WormShield at the largest evaluated network:
+  Residual attack reach: 0.08%
+  Mean reach reduction versus no defense: 9.54 percentage points
+  Fully contained by WormShield: 98.46% of malicious runs
+
+TOPOLOGY THREAT INTERPRETATION
+------------------------------
+Largest no-defense reach fraction: Sparse mesh (41.86%).
+Smallest no-defense reach fraction: Star (16.48%).
+Deepest propagation: Sparse mesh (mean max depth 2.07).
+Most successful malicious relays: Sparse mesh (3.89 relays/run).
+
+WormShield highest containment by topology: Random min-degree (98.46%).
+WormShield lowest containment by topology: Ring (89.67%).
+
+CAUTION
+-------
+These are descriptive held-out trace results, not a causal network-size scaling law. Network size and topology co-vary with realized prompts, roles, and propagation opportunities in AgentArena.
+Do not claim that size alone causes higher or lower threat unless a future controlled experiment holds all other factors fixed.

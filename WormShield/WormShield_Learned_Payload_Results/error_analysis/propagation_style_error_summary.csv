@@ -1,0 +1,5 @@
+Group Type,Group,Seeds Present,Mean N,Mean Positive N,Mean Negative N,FNR Mean,FNR Std,FNR Seeds,FPR Mean,FPR Std,FPR Seeds,Error Rate Mean,Error Rate Std,Error Rate Seeds
+Operational propagation style,Direct / near-verbatim,5,68.6,68.6,0.0,0.1068694649087422,0.05539265320056761,5,,,0,0.1068694649087422,0.05539265320056761,5
+Operational propagation style,Paraphrased / reformulated,5,40.4,40.4,0.0,0.21866348798826332,0.03926638617468927,5,,,0,0.21866348798826332,0.03926638617468927,5
+Operational propagation style,Summarized,5,19.4,19.4,0.0,0.1048289306601327,0.06185116145890958,5,,,0,0.1048289306601327,0.06185116145890958,5
+Operational propagation style,Structured partial,5,15.2,15.2,0.0,0.4251756576756577,0.14268297649258802,5,,,0,0.4251756576756577,0.14268297649258802,5

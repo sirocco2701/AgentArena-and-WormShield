@@ -1,0 +1,15 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\plot_containment_relays.py
+
+
+Malicious relay outcomes:
+   Defense  Blocked Count  Delivered Count  Blocked %  Delivered %
+No Defense              0              573   0.000000   100.000000
+DonkeyRail            311              111  73.696682    26.303318
+WormShield            369               19  95.103093     4.896907
+
+Saved:
+D:\WormShield final\AgentArena_Containment_Replay_Results\containment_figure_relays_only_counts.png
+D:\WormShield final\AgentArena_Containment_Replay_Results\containment_figure_relays_only_counts.pdf
+
+Note: bar heights are percentages, but the labels inside the segments are raw counts aggregated across malicious replay runs.

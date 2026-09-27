@@ -1,0 +1,37 @@
+{
+  "input": "paper-main-combined-clean.json",
+  "sampling_seed": 20260913,
+  "per_class": 15,
+  "total_cases": 45,
+  "max_per_run": 2,
+  "oracle_label_counts": {
+    "propagating": 15,
+    "clean": 15,
+    "exposed": 15
+  },
+  "task_family_counts": {
+    "assurance_triage": 12,
+    "slice_management": 11,
+    "edge_mesh": 10,
+    "ran_orchestration": 12
+  },
+  "topology_counts": {
+    "ring": 9,
+    "chain": 9,
+    "mesh_lite": 13,
+    "random_min_degree": 9,
+    "star": 5
+  },
+  "provider_counts": {
+    "openai": 16,
+    "gemini": 14,
+    "azure": 15
+  },
+  "blinding": {
+    "future_events_hidden": true,
+    "oracle_label_hidden": true,
+    "oracle_evidence_hidden": true,
+    "seed_specific_markers_replaced": true,
+    "node_wrapper_tags_removed": true
+  }
+}

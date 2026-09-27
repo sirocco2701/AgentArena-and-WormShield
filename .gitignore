@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Local secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Generated/cache artifacts
+.dist/
+tmp/
+cache/
+.cache/
+outputs/
+hf_cache/
+feature_cache/
+models/
+
+# Local external checkouts
+donkeyrail-test/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,33 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\plot_wormshield.py
+
+
+Loading cached test features...
+AgentArena cache:
+D:\WormShield final\WormShield_Learned_Payload_Results\feature_cache\agentarena_learned_payload__protectai_deberta-v3-base-prompt-injection-v2.pkl
+
+AI-Worm cache:
+D:\WormShield final\WormShield_Learned_Payload_Results\feature_cache\aiworm_test_learned_payload__protectai_deberta-v3-base-prompt-injection-v2.pkl
+findfont: Failed to find font weight semibold for DejaVu Sans, now using 700.
+findfont: Failed to find font weight semibold for DejaVu Sans, now using 700.
+
+Saved AgentArena ROC:
+D:\WormShield final\WormShield_Learned_Payload_Results\figures\agentarena_roc_large_text.png
+D:\WormShield final\WormShield_Learned_Payload_Results\figures\agentarena_roc_large_text.pdf
+
+Saved AI-Worm ROC:
+D:\WormShield final\WormShield_Learned_Payload_Results\figures\aiworm_roc_large_text.png
+D:\WormShield final\WormShield_Learned_Payload_Results\figures\aiworm_roc_large_text.pdf
+
+ROC-AUC summary:
+   Dataset              Variant   mean    std
+   AI-Worm Learned payload only 0.8584 0.0045
+   AI-Worm        Semantic only 0.9989 0.0002
+   AI-Worm           WormShield 0.9987 0.0004
+AgentArena Learned payload only 0.7971 0.0345
+AgentArena        Semantic only 0.9523 0.0034
+AgentArena           WormShield 0.9654 0.0038
+
+Saved:
+D:\WormShield final\WormShield_Learned_Payload_Results\figures\roc_auc_per_seed.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\figures\roc_auc_summary.csv

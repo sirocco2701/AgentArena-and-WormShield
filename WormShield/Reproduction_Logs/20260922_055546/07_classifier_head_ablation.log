@@ -1,0 +1,259 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\wormshieldClasifierAblation.py
+
+
+============================================================================================
+Original WormShield - Classifier-Head Ablation on AgentArena
+============================================================================================
+Representation fixed:
+  MiniLM 384 + frozen DeBERTa payload 1 = 385 features
+
+Labels fixed:
+  propagating=1; clean/exposed=0
+
+Splits fixed:
+  exact saved run-level splits from original WormShield
+
+Threshold:
+  selected independently per seed from validation F1 only
+
+Loading cached AgentArena features:
+D:\WormShield final\WormShield_Learned_Payload_Results\feature_cache\agentarena_learned_payload__protectai_deberta-v3-base-prompt-injection-v2.pkl
+
+Original AgentArena label distribution:
+label_binary
+negative (clean/exposed)    1150
+positive (propagating)       473
+
+========================================================================================
+Seed 7
+========================================================================================
+Train N=951, Val N=208, Test N=464
+
+  Logistic Regression
+C:\Users\harir\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\linear_model\_logistic.py:1381: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+    Val threshold: 0.649268
+    Test F1: 0.7803, ROC-AUC: 0.9404, PR-AUC: 0.8915, FPR: 0.0531
+
+  Gaussian Naive Bayes
+    Val threshold: 0.924905
+    Test F1: 0.7660, ROC-AUC: 0.9258, PR-AUC: 0.7785, FPR: 0.0938
+
+  Decision Stump
+    Val threshold: 0.715304
+    Test F1: 0.6532, ROC-AUC: 0.7573, PR-AUC: 0.4927, FPR: 0.3812
+
+  Linear SVM
+    Val threshold: 0.452353
+    Test F1: 0.7893, ROC-AUC: 0.9285, PR-AUC: 0.8792, FPR: 0.0437
+
+  Random Forest
+    Val threshold: 0.481400
+    Test F1: 0.7957, ROC-AUC: 0.9572, PR-AUC: 0.8988, FPR: 0.0750
+
+  XGBoost
+    Val threshold: 0.461490
+    Test F1: 0.8662, ROC-AUC: 0.9621, PR-AUC: 0.9160, FPR: 0.0531
+
+========================================================================================
+Seed 19
+========================================================================================
+Train N=868, Val N=241, Test N=514
+
+  Logistic Regression
+C:\Users\harir\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\linear_model\_logistic.py:1381: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+    Val threshold: 0.487232
+    Test F1: 0.8232, ROC-AUC: 0.9461, PR-AUC: 0.8996, FPR: 0.0907
+
+  Gaussian Naive Bayes
+    Val threshold: 0.666144
+    Test F1: 0.8073, ROC-AUC: 0.9173, PR-AUC: 0.7363, FPR: 0.1236
+
+  Decision Stump
+    Val threshold: 0.729259
+    Test F1: 0.6505, ROC-AUC: 0.7708, PR-AUC: 0.4880, FPR: 0.3516
+
+  Linear SVM
+    Val threshold: 0.480857
+    Test F1: 0.7692, ROC-AUC: 0.9322, PR-AUC: 0.8756, FPR: 0.0714
+
+  Random Forest
+    Val threshold: 0.416810
+    Test F1: 0.8037, ROC-AUC: 0.9532, PR-AUC: 0.8954, FPR: 0.1154
+
+  XGBoost
+    Val threshold: 0.349214
+    Test F1: 0.8571, ROC-AUC: 0.9639, PR-AUC: 0.9240, FPR: 0.0714
+
+========================================================================================
+Seed 31
+========================================================================================
+Train N=911, Val N=234, Test N=478
+
+  Logistic Regression
+C:\Users\harir\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\linear_model\_logistic.py:1381: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+    Val threshold: 0.956540
+    Test F1: 0.7304, ROC-AUC: 0.9563, PR-AUC: 0.9191, FPR: 0.0148
+
+  Gaussian Naive Bayes
+    Val threshold: 1.000000
+    Test F1: 0.8000, ROC-AUC: 0.9261, PR-AUC: 0.7545, FPR: 0.1068
+
+  Decision Stump
+    Val threshold: 0.730468
+    Test F1: 0.6394, ROC-AUC: 0.7578, PR-AUC: 0.4767, FPR: 0.3709
+
+  Linear SVM
+    Val threshold: 0.891666
+    Test F1: 0.7469, ROC-AUC: 0.9370, PR-AUC: 0.8877, FPR: 0.0297
+
+  Random Forest
+    Val threshold: 0.453548
+    Test F1: 0.8283, ROC-AUC: 0.9660, PR-AUC: 0.9218, FPR: 0.0979
+
+  XGBoost
+    Val threshold: 0.763654
+    Test F1: 0.8446, ROC-AUC: 0.9714, PR-AUC: 0.9493, FPR: 0.0119
+
+========================================================================================
+Seed 43
+========================================================================================
+Train N=907, Val N=212, Test N=504
+
+  Logistic Regression
+C:\Users\harir\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\linear_model\_logistic.py:1381: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+    Val threshold: 0.787843
+    Test F1: 0.7986, ROC-AUC: 0.9482, PR-AUC: 0.8970, FPR: 0.0560
+
+  Gaussian Naive Bayes
+    Val threshold: 0.000024
+    Test F1: 0.8308, ROC-AUC: 0.9343, PR-AUC: 0.7806, FPR: 0.1204
+
+  Decision Stump
+    Val threshold: 0.725803
+    Test F1: 0.6667, ROC-AUC: 0.7833, PR-AUC: 0.5074, FPR: 0.3109
+
+  Linear SVM
+    Val threshold: 0.016669
+    Test F1: 0.7945, ROC-AUC: 0.9372, PR-AUC: 0.8677, FPR: 0.0812
+
+  Random Forest
+    Val threshold: 0.587829
+    Test F1: 0.7769, ROC-AUC: 0.9651, PR-AUC: 0.9224, FPR: 0.0336
+
+  XGBoost
+    Val threshold: 0.496146
+    Test F1: 0.8399, ROC-AUC: 0.9613, PR-AUC: 0.9302, FPR: 0.0448
+
+========================================================================================
+Seed 59
+========================================================================================
+Train N=884, Val N=259, Test N=480
+
+  Logistic Regression
+C:\Users\harir\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\linear_model\_logistic.py:1381: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+    Val threshold: 0.354647
+    Test F1: 0.8169, ROC-AUC: 0.9535, PR-AUC: 0.8950, FPR: 0.0930
+
+  Gaussian Naive Bayes
+    Val threshold: 0.982156
+    Test F1: 0.7932, ROC-AUC: 0.9166, PR-AUC: 0.7213, FPR: 0.1221
+
+  Decision Stump
+    Val threshold: 0.806424
+    Test F1: 0.6667, ROC-AUC: 0.7769, PR-AUC: 0.5197, FPR: 0.2035
+
+  Linear SVM
+    Val threshold: -0.064886
+    Test F1: 0.8042, ROC-AUC: 0.9416, PR-AUC: 0.8786, FPR: 0.1017
+
+  Random Forest
+    Val threshold: 0.419848
+    Test F1: 0.8289, ROC-AUC: 0.9619, PR-AUC: 0.9067, FPR: 0.1221
+
+  XGBoost
+    Val threshold: 0.553096
+    Test F1: 0.8676, ROC-AUC: 0.9681, PR-AUC: 0.9220, FPR: 0.0523
+
+==================================================================================================================================
+WORMNET CLASSIFIER-HEAD ABLATION
+==================================================================================================================================
+
+Logistic Regression
+  Accuracy : 0.8838 +/- 0.0093
+  Precision: 0.8457 +/- 0.0569
+  Recall   : 0.7545 +/- 0.0961
+  F1       : 0.7899 +/- 0.0333
+  ROC-AUC  : 0.9489 +/- 0.0056
+  PR-AUC   : 0.9004 +/- 0.0097
+  FPR      : 0.0615 +/- 0.0287
+  Threshold: 0.6471 +/- 0.2129
+
+Gaussian Naive Bayes
+  Accuracy : 0.8751 +/- 0.0106
+  Precision: 0.7578 +/- 0.0162
+  Recall   : 0.8491 +/- 0.0563
+  F1       : 0.7995 +/- 0.0210
+  ROC-AUC  : 0.9240 +/- 0.0065
+  PR-AUC   : 0.7542 +/- 0.0232
+  FPR      : 0.1133 +/- 0.0115
+  Threshold: 0.7146 +/- 0.3769
+
+Decision Stump
+  Accuracy : 0.7318 +/- 0.0304
+  Precision: 0.5317 +/- 0.0341
+  Recall   : 0.8621 +/- 0.0528
+  F1       : 0.6553 +/- 0.0104
+  ROC-AUC  : 0.7692 +/- 0.0103
+  PR-AUC   : 0.4969 +/- 0.0150
+  FPR      : 0.3236 +/- 0.0647
+  Threshold: 0.7415 +/- 0.0329
+
+Linear SVM
+  Accuracy : 0.8779 +/- 0.0049
+  Precision: 0.8312 +/- 0.0506
+  Recall   : 0.7443 +/- 0.0700
+  F1       : 0.7808 +/- 0.0205
+  ROC-AUC  : 0.9353 +/- 0.0045
+  PR-AUC   : 0.8777 +/- 0.0065
+  FPR      : 0.0656 +/- 0.0259
+  Threshold: 0.3553 +/- 0.3476
+
+Random Forest
+  Accuracy : 0.8849 +/- 0.0068
+  Precision: 0.8018 +/- 0.0529
+  Recall   : 0.8233 +/- 0.0845
+  F1       : 0.8067 +/- 0.0199
+  ROC-AUC  : 0.9607 +/- 0.0049
+  PR-AUC   : 0.9090 +/- 0.0113
+  FPR      : 0.0888 +/- 0.0320
+  Threshold: 0.4719 +/- 0.0626
+
+XGBoost
+  Accuracy : 0.9173 +/- 0.0048
+  Precision: 0.8852 +/- 0.0424
+  Recall   : 0.8313 +/- 0.0477
+  F1       : 0.8551 +/- 0.0112
+  ROC-AUC  : 0.9654 +/- 0.0038
+  PR-AUC   : 0.9283 +/- 0.0114
+  FPR      : 0.0467 +/- 0.0195
+  Threshold: 0.5247 +/- 0.1368
+
+Compact paper table:
+          Classifier                F1           ROC-AUC            PR-AUC               FPR
+ Logistic Regression 0.7899 +/- 0.0333 0.9489 +/- 0.0056 0.9004 +/- 0.0097 0.0615 +/- 0.0287
+Gaussian Naive Bayes 0.7995 +/- 0.0210 0.9240 +/- 0.0065 0.7542 +/- 0.0232 0.1133 +/- 0.0115
+      Decision Stump 0.6553 +/- 0.0104 0.7692 +/- 0.0103 0.4969 +/- 0.0150 0.3236 +/- 0.0647
+          Linear SVM 0.7808 +/- 0.0205 0.9353 +/- 0.0045 0.8777 +/- 0.0065 0.0656 +/- 0.0259
+       Random Forest 0.8067 +/- 0.0199 0.9607 +/- 0.0049 0.9090 +/- 0.0113 0.0888 +/- 0.0320
+             XGBoost 0.8551 +/- 0.0112 0.9654 +/- 0.0038 0.9283 +/- 0.0114 0.0467 +/- 0.0195
+
+Saved:
+D:\WormShield final\WormShield_Learned_Payload_Results\classifier_ablation_agentarena\classifier_ablation_per_seed.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\classifier_ablation_agentarena\classifier_ablation_summary.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\classifier_ablation_agentarena\classifier_ablation_compact_table.csv

@@ -1,0 +1,89 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\size_analize.py
+
+
+============================================================================================================
+AgentArena Threat Scaling Analysis
+============================================================================================================
+
+Question: how does actual attack spread change with network size and topology?
+
+Raw AgentArena CSV:
+D:\WormShield final\wormshield-observable-main.csv
+
+Topology column:
+topology
+
+Existing containment run metrics:
+D:\WormShield final\AgentArena_Containment_Replay_Results\run_metrics.csv
+
+====================================================================================================================================
+NO-DEFENSE THREAT BY NETWORK SIZE
+====================================================================================================================================
+ Network Size  Mean Runs per Seed  Attack Reach Count Mean  Attack Reach (%) Mean  Max Propagation Depth Mean  Successful Malicious Relays Mean  Fully Contained (%) Mean
+            4              10.200                    1.902                 63.388                       1.477                             2.255                     3.485
+            8               8.600                    1.534                 21.920                       1.439                             1.969                     5.000
+           10              13.400                    1.490                 16.557                       1.280                             1.603                     6.833
+           15              12.400                    1.707                 12.192                       1.408                             1.707                     0.000
+           20              16.600                    1.828                  9.620                       1.620                             1.931                     3.679
+
+====================================================================================================================================
+WORMFENCE EFFECT BY NETWORK SIZE
+====================================================================================================================================
+ Network Size  No Defense Reach (%) Mean  WormShield Reach (%) Mean  Reach Reduction (percentage points) Mean  Relative Reach Reduction (%) Mean  WormShield Fully Contained (%) Mean  Prevented Existing Spread (%) Mean
+            4                     63.388                      4.003                                    59.385                             90.476                               90.658                              87.173
+            8                     21.920                      0.000                                    21.920                            100.000                              100.000                              95.000
+           10                     16.557                      1.343                                    15.213                             86.963                               87.909                              81.075
+           15                     12.192                      0.469                                    11.723                             93.438                               93.438                              93.438
+           20                      9.620                      0.081                                     9.539                             98.462                               98.462                              94.783
+
+====================================================================================================================================
+NO-DEFENSE THREAT BY TOPOLOGY
+====================================================================================================================================
+         Topology  Mean Runs per Seed  Attack Reach Count Mean  Attack Reach (%) Mean  Max Propagation Depth Mean  Successful Malicious Relays Mean
+            Chain              16.800                    1.757                 19.657                       1.502                             1.757
+             Star              20.200                    1.146                 16.477                       1.097                             1.146
+             Ring               8.600                    2.020                 27.756                       1.680                             2.058
+      Sparse mesh               6.000                    2.287                 41.861                       2.068                             3.890
+Random min-degree               9.600                    2.047                 21.904                       1.436                             2.142
+
+====================================================================================================================================
+AUTOMATIC DESCRIPTIVE INTERPRETATION
+====================================================================================================================================
+NETWORK-SIZE THREAT INTERPRETATION
+----------------------------------
+Absolute spread under no defense:
+  4 agents: 1.90 reached agents/run
+  20 agents: 1.83 reached agents/run
+  Descriptively, larger networks expose FEWER agents in absolute terms under no defense.
+
+Relative spread under no defense:
+  4 agents: 63.39% of non-seed agents reached
+  20 agents: 9.62% of non-seed agents reached
+  Descriptively, the worm occupies a SMALLER fraction of the network as network size increases from the smallest to the largest evaluated setting, even if absolute reach may increase.
+
+Highest mean no-defense reach fraction: 4 agents (63.39%).
+Deepest mean no-defense propagation: 20 agents (depth 1.62).
+
+WormShield at the largest evaluated network:
+  Residual attack reach: 0.08%
+  Mean reach reduction versus no defense: 9.54 percentage points
+  Fully contained by WormShield: 98.46% of malicious runs
+
+TOPOLOGY THREAT INTERPRETATION
+------------------------------
+Largest no-defense reach fraction: Sparse mesh (41.86%).
+Smallest no-defense reach fraction: Star (16.48%).
+Deepest propagation: Sparse mesh (mean max depth 2.07).
+Most successful malicious relays: Sparse mesh (3.89 relays/run).
+
+WormShield highest containment by topology: Random min-degree (98.46%).
+WormShield lowest containment by topology: Ring (89.67%).
+
+CAUTION
+-------
+These are descriptive held-out trace results, not a causal network-size scaling law. Network size and topology co-vary with realized prompts, roles, and propagation opportunities in AgentArena.
+Do not claim that size alone causes higher or lower threat unless a future controlled experiment holds all other factors fixed.
+
+Saved outputs under:
+D:\WormShield final\AgentArena_Threat_Scaling_Results

@@ -1,0 +1,4 @@
+Defense,Attack Reach (%),Malicious Relay Block (%),Successful Malicious Relays,Max Depth,Benign False-Block (%),Fully Contained Runs (%)
+No Defense,22.31 $\pm$ 3.20,0.00 $\pm$ 0.00,1.87 $\pm$ 0.11,1.45 $\pm$ 0.07,0.00 $\pm$ 0.00,3.95 $\pm$ 2.29
+DonkeyRail,6.32 $\pm$ 2.71,74.35 $\pm$ 8.42,0.36 $\pm$ 0.14,0.28 $\pm$ 0.09,43.05 $\pm$ 10.70,73.30 $\pm$ 8.28
+WormShield,1.06 $\pm$ 0.55,95.07 $\pm$ 1.59,0.06 $\pm$ 0.02,0.06 $\pm$ 0.02,1.01 $\pm$ 0.92,94.40 $\pm$ 1.80

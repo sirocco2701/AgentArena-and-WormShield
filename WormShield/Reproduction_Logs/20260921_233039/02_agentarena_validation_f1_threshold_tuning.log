@@ -1,0 +1,77 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\wormshield_tune_threshold.py --dataset agentarena
+
+
+No models will be retrained.
+Thresholds are selected from validation data only.
+
+Loading AgentArena features:
+D:\WormShield final\WormShield_Learned_Payload_Results\feature_cache\agentarena_learned_payload__protectai_deberta-v3-base-prompt-injection-v2.pkl
+
+========================================================================
+AGENTARENA SEED 7
+========================================================================
+Validation-selected threshold: 0.461490
+Best validation F1: 0.9106
+
+Test at threshold 0.5:
+  F1=0.8551  Precision=0.8939  Recall=0.8194  FPR=0.0437
+Test at validation-tuned threshold:
+  F1=0.8662  Precision=0.8786  Recall=0.8542  FPR=0.0531
+
+========================================================================
+AGENTARENA SEED 19
+========================================================================
+Validation-selected threshold: 0.349214
+Best validation F1: 0.9091
+
+Test at threshold 0.5:
+  F1=0.8503  Precision=0.8681  Recall=0.8333  FPR=0.0522
+Test at validation-tuned threshold:
+  F1=0.8571  Precision=0.8354  Recall=0.8800  FPR=0.0714
+
+========================================================================
+AGENTARENA SEED 31
+========================================================================
+Validation-selected threshold: 0.763654
+Best validation F1: 0.8547
+
+Test at threshold 0.5:
+  F1=0.8857  Precision=0.8921  Recall=0.8794  FPR=0.0445
+Test at validation-tuned threshold:
+  F1=0.8446  Precision=0.9636  Recall=0.7518  FPR=0.0119
+
+========================================================================
+AGENTARENA SEED 43
+========================================================================
+Validation-selected threshold: 0.496146
+Best validation F1: 0.9008
+
+Test at threshold 0.5:
+  F1=0.8357  Precision=0.8797  Recall=0.7959  FPR=0.0448
+Test at validation-tuned threshold:
+  F1=0.8399  Precision=0.8806  Recall=0.8027  FPR=0.0448
+
+========================================================================
+AGENTARENA SEED 59
+========================================================================
+Validation-selected threshold: 0.553096
+Best validation F1: 0.8889
+
+Test at threshold 0.5:
+  F1=0.8736  Precision=0.8582  Recall=0.8897  FPR=0.0581
+Test at validation-tuned threshold:
+  F1=0.8676  Precision=0.8676  Recall=0.8676  FPR=0.0523
+
+====================================================================================================================================================================================
+THRESHOLD RE-EVALUATION
+====================================================================================================================================================================================
+Dataset     Operating Point     Threshold           Accuracy            Precision           Recall              F1                  ROC-AUC             PR-AUC              FPR                 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AgentArena  Fixed-0.5           0.5000 +/- 0.0000   0.9194 +/- 0.0091   0.8784 +/- 0.0138   0.8436 +/- 0.0357   0.8601 +/- 0.0176   0.9654 +/- 0.0038   0.9283 +/- 0.0114   0.0487 +/- 0.0056   
+AgentArena  Validation-tuned    0.5247 +/- 0.1368   0.9173 +/- 0.0048   0.8852 +/- 0.0424   0.8313 +/- 0.0477   0.8551 +/- 0.0112   0.9654 +/- 0.0038   0.9283 +/- 0.0114   0.0467 +/- 0.0195   
+
+Saved:
+D:\WormShield final\WormShield_Learned_Payload_Results\threshold_tuning\threshold_tuning_per_seed.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\threshold_tuning\threshold_tuning_summary.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\threshold_tuning\selected_thresholds.csv

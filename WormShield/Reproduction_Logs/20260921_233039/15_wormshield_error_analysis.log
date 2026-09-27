@@ -1,0 +1,119 @@
+COMMAND
+C:\Users\harir\AppData\Local\Programs\Python\Python311\python.exe D:\WormShield final\error_analise.py
+
+
+========================================================================================================
+WormShield Held-Out Error Analysis
+========================================================================================================
+
+No retraining. Validation-only threshold selection.
+
+Original WormShield module:
+D:\WormShield final\wormshield_learned_payload.py
+
+Raw AgentArena CSV:
+D:\WormShield final\wormshield-observable-main.csv
+
+Cached WormShield features:
+D:\WormShield final\WormShield_Learned_Payload_Results\feature_cache\agentarena_learned_payload__protectai_deberta-v3-base-prompt-injection-v2.pkl
+
+Optional subgroup columns found:
+['content_format', 'agent_name', 'incoming_source', 'scenario_label', 'network_size']
+
+------------------------------------------------------------------------------
+Seed 7
+------------------------------------------------------------------------------
+threshold=0.461490 | TP=123 FP=17 TN=303 FN=21 | F1=0.8662 FPR=0.0531
+
+------------------------------------------------------------------------------
+Seed 19
+------------------------------------------------------------------------------
+threshold=0.349214 | TP=132 FP=26 TN=338 FN=18 | F1=0.8571 FPR=0.0714
+
+------------------------------------------------------------------------------
+Seed 31
+------------------------------------------------------------------------------
+threshold=0.763654 | TP=106 FP=4 TN=333 FN=35 | F1=0.8446 FPR=0.0119
+
+------------------------------------------------------------------------------
+Seed 43
+------------------------------------------------------------------------------
+threshold=0.496146 | TP=118 FP=16 TN=341 FN=29 | F1=0.8399 FPR=0.0448
+
+------------------------------------------------------------------------------
+Seed 59
+------------------------------------------------------------------------------
+threshold=0.553096 | TP=118 FP=18 TN=326 FN=18 | F1=0.8676 FPR=0.0523
+
+====================================================================================================================
+OVERALL ERROR SUMMARY
+====================================================================================================================
+   Metric     Mean     Std
+Precision   0.8852  0.0424
+   Recall   0.8313  0.0477
+       F1   0.8551  0.0112
+      FPR   0.0467  0.0195
+       TP 119.4000  8.4285
+       FP  16.2000  7.0541
+       TN 328.2000 13.5853
+       FN  24.2000  6.7350
+
+====================================================================================================================
+PROPAGATION-STYLE FALSE-NEGATIVE ANALYSIS
+====================================================================================================================
+                     Group  Mean N  FNR Mean  FNR Std  Seeds Present
+    Direct / near-verbatim 68.6000    0.1069   0.0554              5
+Paraphrased / reformulated 40.4000    0.2187   0.0393              5
+                Summarized 19.4000    0.1048   0.0619              5
+        Structured partial 15.2000    0.4252   0.1427              5
+
+Highest subgroup FNRs (positive support in all five seeds, mean N >= 5):
+                   Group Type                      Group  Mean Positive N  FNR Mean  FNR Std
+       Forward-message length                       0-25          22.8000    0.4592   0.1080
+                   agent_name               Edge-Relay-2           7.2000    0.4327   0.2094
+Operational propagation style         Structured partial          15.2000    0.4252   0.1427
+              incoming_source            CU-Controller-3           5.2000    0.4200   0.2381
+               content_format            json_structured          12.0000    0.4165   0.1568
+              incoming_source               Edge-Relay-4           5.0000    0.3200   0.1939
+                   agent_name               Edge-Relay-4           7.2000    0.3159   0.1832
+                 network_size                          8          25.0000    0.2657   0.1186
+Operational propagation style Paraphrased / reformulated          40.4000    0.2187   0.0393
+                 network_size                          4          19.0000    0.2153   0.1015
+                   agent_name               Edge-Relay-6           5.0000    0.2100   0.2200
+                   agent_name               Edge-Relay-1          14.2000    0.2020   0.0976
+            Payload-score bin                [0.75,1.00]          31.4000    0.2004   0.0717
+                 network_size                         10          24.6000    0.1791   0.0761
+              incoming_source               Edge-Relay-3           6.2000    0.1743   0.2301
+
+Highest subgroup FPRs (negative support in all five seeds, mean N >= 5):
+            Group Type            Group  Mean Negative N  FPR Mean  FPR Std
+       incoming_source CU-Controller-14           5.2000    0.2305   0.2451
+    Ground-truth state          exposed          96.4000    0.1457   0.0580
+        scenario_label        malicious         133.2000    0.1146   0.0509
+       incoming_source     Edge-Relay-4          12.2000    0.1142   0.0732
+       incoming_source  CU-Controller-3          12.2000    0.1131   0.1358
+            agent_name  CU-Controller-1          25.4000    0.1104   0.0802
+            agent_name     Edge-Relay-1          55.2000    0.0785   0.0248
+          network_size               15          71.4000    0.0763   0.0192
+     Payload-score bin      [0.00,0.25)         161.8000    0.0664   0.0293
+        content_format       plain_text         223.6000    0.0660   0.0245
+       incoming_source     Edge-Relay-3          22.8000    0.0651   0.0562
+            agent_name     Edge-Relay-4           9.4000    0.0545   0.1091
+            agent_name   WG-Sentinel-12           7.4000    0.0530   0.0663
+Forward-message length           51-100          25.4000    0.0514   0.0283
+Forward-message length             0-25         242.8000    0.0506   0.0233
+
+IMPORTANT:
+  Propagation styles are operational analytical categories, not ground-truth transformation labels.
+  Inspect manual_review_sample.csv before writing qualitative explanations for the errors.
+
+Saved:
+D:\WormShield final\WormShield_Learned_Payload_Results\error_analysis\error_events_per_seed.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\error_analysis\error_summary_overall.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\error_analysis\subgroup_metrics_per_seed.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\error_analysis\subgroup_metrics_summary.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\error_analysis\propagation_style_error_summary.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\error_analysis\strongest_false_negatives.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\error_analysis\strongest_false_positives.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\error_analysis\manual_review_sample.csv
+D:\WormShield final\WormShield_Learned_Payload_Results\error_analysis\validation_selected_thresholds.csv

@@ -1,0 +1,338 @@
+{
+  "started_at": "2026-09-22T05:55:46",
+  "root": "D:\\WormShield final",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "fresh": true,
+  "reuse_features": false,
+  "skip_bootstrap": false,
+  "removed_generated_dirs": [
+    "WormShield_Learned_Payload_Results",
+    "DonkeyRail_AgentArena_Matched_Splits_Results",
+    "WormShield_Leave_One_Task_Out",
+    "WormShield_Run_Bootstrap_CI",
+    "WormShield_Semantic_Relation_Ablation",
+    "AgentArena_Containment_Replay_Results",
+    "AgentArena_Threat_Scaling_Results"
+  ],
+  "resolved_scripts": {
+    "main": "wormshield_learned_payload.py",
+    "threshold_tuning": "wormshield_tune_threshold.py",
+    "low_fpr": "wormshield_low_fpr_eval.py",
+    "donkeyrail": "donkeyrail_agentarena.py",
+    "leave_one_task": "wormshield_leave_one_task_out.py",
+    "bootstrap": "wormshield_run_bootstrap_ci.py",
+    "semantic_relation": "wormshield_semantic_relation_ablation.py",
+    "transformation": "wormshield_transformation_robustness_agentarena.py",
+    "classifier": "wormshieldClasifierAblation.py",
+    "threshold_sensitivity": "threshold_sensivity.py",
+    "roc": "plot_wormshield.py",
+    "containment": "agentarena_containment_replay.py",
+    "containment_plot": "plot_containment_relays.py",
+    "size_topology": "size_analize.py",
+    "error_analysis": "error_analise.py"
+  },
+  "dataset_audit": {
+    "dataset": "D:\\WormShield final\\wormshield-observable-main.csv",
+    "rows": 1623,
+    "unique_runs": 621,
+    "label_multiclass_counts": {
+      "clean": 819,
+      "propagating": 473,
+      "exposed": 331
+    },
+    "label_binary_counts": {
+      "0": 1150,
+      "1": 473
+    },
+    "expected": {
+      "rows": 1623,
+      "unique_runs": 621,
+      "label_multiclass_counts": {
+        "clean": 819,
+        "exposed": 331,
+        "propagating": 473
+      },
+      "label_binary_counts": {
+        "0": 1150,
+        "1": 473
+      }
+    },
+    "matches_current_paper": true,
+    "problems": []
+  },
+  "manual_oracle_validation_run": false,
+  "aiworm_official_donkeyrail_notebook_run": false,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Main WormShield train, test, and component ablation",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\wormshield_learned_payload.py",
+        "all",
+        "--dataset",
+        "both",
+        "--rebuild-features"
+      ],
+      "return_code": 0,
+      "seconds": 17287.43,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\01_main_wormshield_train__test__and_component_ablation.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\main_models\\agentarena_seed_7.joblib",
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\main_models\\aiworm_seed_7.joblib",
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\ablation_models\\agentarena\\semantic_plus_learned_payload\\seed_7.joblib"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 2,
+      "name": "AgentArena validation-F1 threshold tuning",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\wormshield_tune_threshold.py",
+        "--dataset",
+        "agentarena"
+      ],
+      "return_code": 0,
+      "seconds": 3.806,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\02_agentarena_validation_f1_threshold_tuning.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\threshold_tuning\\threshold_tuning_summary.csv",
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\threshold_tuning\\selected_thresholds.csv"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 3,
+      "name": "AI-Worm validation low-FPR operating point",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\wormshield_low_fpr_eval.py",
+        "--dataset",
+        "aiworm",
+        "--target-fpr",
+        "0.03"
+      ],
+      "return_code": 0,
+      "seconds": 19.422,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\03_ai_worm_validation_low_fpr_operating_point.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\low_fpr_evaluation\\low_fpr_summary.csv",
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\low_fpr_evaluation\\selected_low_fpr_thresholds.csv"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 4,
+      "name": "Matched-split DonkeyRail baselines on AgentArena",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\donkeyrail_agentarena.py"
+      ],
+      "return_code": 0,
+      "seconds": 24.312,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\04_matched_split_donkeyrail_baselines_on_agentarena.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\DonkeyRail_AgentArena_Matched_Splits_Results\\donkeyrail_paper_table.csv",
+        "D:\\WormShield final\\DonkeyRail_AgentArena_Matched_Splits_Results\\donkeyrail_matched_summary.csv"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 5,
+      "name": "Leave-one-task-family-out evaluation",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\wormshield_leave_one_task_out.py"
+      ],
+      "return_code": 0,
+      "seconds": 42.841,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\05_leave_one_task_family_out_evaluation.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Leave_One_Task_Out\\leave_one_task_out_summary.csv"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 6,
+      "name": "Explicit semantic-relation ablation",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\wormshield_semantic_relation_ablation.py"
+      ],
+      "return_code": 0,
+      "seconds": 258.765,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\06_explicit_semantic_relation_ablation.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Semantic_Relation_Ablation\\semantic_relation_summary.csv"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 7,
+      "name": "Classifier-head ablation",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\wormshieldClasifierAblation.py"
+      ],
+      "return_code": 0,
+      "seconds": 53.224,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\07_classifier_head_ablation.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\classifier_ablation_agentarena\\classifier_ablation_summary.csv"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 8,
+      "name": "Run-cluster bootstrap confidence intervals",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\wormshield_run_bootstrap_ci.py",
+        "--bootstrap-reps",
+        "5000"
+      ],
+      "return_code": 0,
+      "seconds": 277.824,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\08_run_cluster_bootstrap_confidence_intervals.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Run_Bootstrap_CI\\bootstrap_ci_per_seed.csv",
+        "D:\\WormShield final\\WormShield_Run_Bootstrap_CI\\bootstrap_ci_width_summary.csv"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 9,
+      "name": "Propagation-style robustness",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\wormshield_transformation_robustness_agentarena.py"
+      ],
+      "return_code": 0,
+      "seconds": 25.992,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\09_propagation_style_robustness.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\propagation_style_robustness_agentarena\\propagation_style_summary.csv"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 10,
+      "name": "Threshold-sensitivity analysis",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\threshold_sensivity.py"
+      ],
+      "return_code": 0,
+      "seconds": 46.816,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\10_threshold_sensitivity_analysis.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\threshold_sensitivity\\threshold_sensitivity_summary.csv",
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\threshold_sensitivity\\threshold_sensitivity.png"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 11,
+      "name": "ROC analysis and figures",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\plot_wormshield.py"
+      ],
+      "return_code": 0,
+      "seconds": 7.68,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\11_roc_analysis_and_figures.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\figures\\roc_auc_summary.csv",
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\figures\\agentarena_roc_large_text.png",
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\figures\\aiworm_roc_large_text.png"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 12,
+      "name": "Offline counterfactual containment replay",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\agentarena_containment_replay.py"
+      ],
+      "return_code": 0,
+      "seconds": 34.124,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\12_offline_counterfactual_containment_replay.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\AgentArena_Containment_Replay_Results\\run_metrics.csv",
+        "D:\\WormShield final\\AgentArena_Containment_Replay_Results\\containment_table.csv",
+        "D:\\WormShield final\\AgentArena_Containment_Replay_Results\\replay_audit.csv"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 13,
+      "name": "Relay-only containment figure",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\plot_containment_relays.py"
+      ],
+      "return_code": 0,
+      "seconds": 2.121,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\13_relay_only_containment_figure.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\AgentArena_Containment_Replay_Results\\containment_figure_relays_only_counts.png"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 14,
+      "name": "Network-size and topology threat scaling",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\size_analize.py"
+      ],
+      "return_code": 0,
+      "seconds": 3.155,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\14_network_size_and_topology_threat_scaling.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\AgentArena_Threat_Scaling_Results\\threat_by_size_summary.csv",
+        "D:\\WormShield final\\AgentArena_Threat_Scaling_Results\\threat_by_topology_summary.csv",
+        "D:\\WormShield final\\AgentArena_Threat_Scaling_Results\\network_size_reach_fraction.png",
+        "D:\\WormShield final\\AgentArena_Threat_Scaling_Results\\topology_reach_fraction.png"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    },
+    {
+      "step": 15,
+      "name": "WormShield error analysis",
+      "command": [
+        "C:\\Users\\harir\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "D:\\WormShield final\\error_analise.py"
+      ],
+      "return_code": 0,
+      "seconds": 18.175,
+      "log": "D:\\WormShield final\\Reproduction_Logs\\20260922_055546\\15_wormshield_error_analysis.log",
+      "expected_outputs": [
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\error_analysis\\error_summary_overall.csv",
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\error_analysis\\subgroup_metrics_summary.csv",
+        "D:\\WormShield final\\WormShield_Learned_Payload_Results\\error_analysis\\propagation_style_error_summary.csv"
+      ],
+      "missing_expected_outputs": [],
+      "status": "success"
+    }
+  ],
+  "finished_at": "2026-09-22T10:57:31",
+  "overall_status": "success"
+}
