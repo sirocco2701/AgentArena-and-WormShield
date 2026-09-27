@@ -1,5 +1,7 @@
 # AgentArena and WormShield
 
+Detecting and Containing AI-Worm Propagation in Multi-Agent 6G Systems.
+
 This repository contains the cleaned research artifact for the AgentArena / WormShield paper.
 
 - `AgentArena/` contains the interactive AI-native worm propagation simulator, the AgentArena observable dataset, paper-facing notes, and the web demo.
@@ -80,4 +82,3 @@ The paper-facing names are:
 - `WormShield`: the detector/defense benchmark.
 
 Some filenames and internal variables still contain older names such as `wormlab` or `wormguard` to preserve reproducibility of earlier scripts.
-
